@@ -24,5 +24,5 @@ This repository is the Mintlify documentation site for CalBudget.
 ## Content boundaries
 
 - Customer docs can explain product behavior and troubleshooting.
-- Admin docs can describe internal operations, but should not include secrets.
+- Do not add admin, operator, database, API route, environment, cron, deployment, provider-console, or internal support-process documentation to this public docs site.
 - Do not commit API keys, tokens, customer personal data, screenshots with private details, or production credentials.

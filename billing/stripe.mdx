@@ -1,60 +1,42 @@
 ---
-title: "Stripe billing"
-description: "How web subscriptions, checkout, portal management, webhooks, and subscription sync work."
+title: "Web billing"
+description: "Manage CalBudget web subscriptions, payment methods, invoices, renewals, and cancellations."
 icon: "credit-card"
 ---
 
-Stripe powers web subscriptions for Plus and Advisor.
+Web subscriptions for CalBudget are managed from **Billing and plan** in the profile menu.
 
-## Stripe surfaces
+## What you can manage
 
-| Surface | Purpose |
-| --- | --- |
-| Checkout | Starts a paid subscription. |
-| Customer portal | Lets users manage payment method, cancellation, and invoices. |
-| Webhook | Updates local subscription fields when Stripe changes. |
-| Reconcile cron | Refreshes subscription state in case webhooks are delayed or missed. |
-| Admin sync | Lets operators manually refresh subscription state. |
+From billing, you can:
 
-## Local user fields
+- View your current plan.
+- Upgrade from **Free** to **Plus** or **Advisor**.
+- Switch between available billing periods.
+- Update your payment method.
+- Review renewal timing.
+- Open the billing portal when available.
+- Cancel a paid subscription.
 
-Stripe state is stored on the user record:
+## Canceling a web subscription
 
-- Stripe customer ID
-- Stripe subscription ID
-- Stripe price ID
-- Stripe product ID
-- Stripe plan
-- Subscription status
-- Trial end
-- Current period end
-- Cancel-at-period-end state
-- Cancel timestamps
-- Last synced timestamp
+If you cancel a paid subscription, access normally continues through the end of the paid billing period. After that, your account returns to the access level available on your plan.
 
-## Status expectations
+If you return to **Free**, plan limits may apply again. Existing data is not a recommendation to delete information; it simply means some actions may require upgrading again.
 
-Active and valid trialing subscriptions grant access. Past due, unpaid, canceled, and incomplete-expired states should not grant paid access unless a manual override exists.
+## If your plan looks wrong
 
-## Canceling subscriptions
+If you paid but still see **Free**:
 
-Canceling at period end should still grant access through the paid period. The UI should show that the subscription is canceling, not immediately free.
+1. Refresh the app.
+2. Sign out and sign back in.
+3. Confirm you are using the same email address that purchased the plan.
+4. Open **Billing and plan** from the profile menu.
+5. Contact support from the in-app support widget or email [support@calbudget.com](mailto:support@calbudget.com).
 
-## Manual reconciliation
+Include the email address on the CalBudget account and whether the purchase was made on web or iOS. Do not send full card numbers or private payment credentials.
 
-Use admin sync when:
+## Invoices and receipts
 
-- A user paid in Stripe but still sees Free.
-- A webhook was delayed.
-- A customer has multiple Stripe subscriptions.
-- A cancellation is not reflected in the admin panel.
+Receipts are usually sent to the email address associated with the purchase. If you need help finding a receipt, contact support and include the purchase email address.
 
-## Customer support script
-
-If a user says Stripe shows active but CalBudget does not:
-
-1. Open the user in admin.
-2. Confirm email and Stripe customer ID.
-3. Run subscription sync.
-4. Check access plan and subscription status.
-5. Ask the user to refresh or sign out and back in.

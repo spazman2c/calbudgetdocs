@@ -1,0 +1,27 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">CalBudget Advisor widget</title>
+  <desc id="desc">Advisor chat widget with quick questions and a forecast answer.</desc>
+  <rect width="1200" height="720" rx="32" fill="#070812"/>
+  <rect x="260" y="54" width="680" height="612" rx="34" fill="#0C0D14" stroke="#7C3AED" stroke-width="3"/>
+  <rect x="260" y="54" width="680" height="112" rx="34" fill="#161827"/>
+  <rect x="310" y="84" width="64" height="64" rx="20" fill="#2A164C" stroke="#7C3AED"/>
+  <text x="396" y="111" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="850">CalBudget Advisor</text>
+  <text x="396" y="140" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="20">Main checking</text>
+  <rect x="310" y="198" width="256" height="92" rx="22" fill="#11131C" stroke="#303544"/>
+  <text x="336" y="235" fill="#C4B5FD" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="900" letter-spacing="4">LOWEST</text>
+  <text x="336" y="270" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="900">$420</text>
+  <rect x="594" y="198" width="296" height="92" rx="22" fill="#11131C" stroke="#303544"/>
+  <text x="620" y="235" fill="#C4B5FD" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="900" letter-spacing="4">FINISH</text>
+  <text x="620" y="270" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="900">$1,840</text>
+  <text x="310" y="344" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="900" letter-spacing="4">QUICK QUESTIONS</text>
+  <rect x="310" y="368" width="278" height="72" rx="24" fill="#181B24" stroke="#383D4C"/>
+  <text x="336" y="412" fill="#E5E7EB" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="750">What should I watch?</text>
+  <rect x="612" y="368" width="278" height="72" rx="24" fill="#181B24" stroke="#383D4C"/>
+  <text x="638" y="400" fill="#E5E7EB" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="750">Which bill timing</text>
+  <text x="638" y="424" fill="#E5E7EB" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="750">helps most?</text>
+  <rect x="310" y="472" width="580" height="94" rx="24" fill="#0B0D14" stroke="#303544"/>
+  <text x="340" y="512" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="20">Your lowest point is before the next paycheck.</text>
+  <text x="340" y="542" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="20">Review flexible spending before July 12.</text>
+  <rect x="310" y="596" width="580" height="48" rx="18" fill="#11131C" stroke="#303544"/>
+  <text x="338" y="627" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="18">Ask what to move, watch, or do next...</text>
+</svg>
