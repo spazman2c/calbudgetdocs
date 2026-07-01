@@ -1,39 +1,38 @@
 ---
-title: "Plaid integration"
-description: "Optional Plaid account linking, item storage, account sync, and planning boundaries."
+title: "Optional bank connections"
+description: "Understand optional bank connections in CalBudget and how they differ from manual budget planning."
 icon: "link"
 ---
 
-Plaid is optional. CalBudget does not require bank login for core planning.
+CalBudget is manual-first. You do not need to connect a bank account to build a forecast, add bills, schedule paychecks, or use the calendar.
 
-## Plaid data model
+Optional bank connections can help bring account context into CalBudget, but you should still review imported or synced information before relying on it.
 
-Plaid integration stores:
+## When to connect an account
 
-- Plaid item ID
-- Encrypted access token
-- Institution ID and name
-- Item status
-- Transaction cursor
-- Last sync timestamps
-- Error details
-- Linked Plaid accounts
-- Balance information
+Connecting an account can help when you want to:
 
-## User expectation
+- Compare planned transactions against posted activity.
+- Keep balances easier to review.
+- Find recurring income or bills.
+- Reduce manual entry for statement history.
 
-Plaid should help users bring bank context into the app, but the forecast remains a planning surface. Users should still review data before relying on it.
+## Manual planning still matters
 
-## Common states
+Bank history shows what already happened. CalBudget is most useful when it also includes what you know is coming next. Add future paychecks, bills, subscriptions, debt payments, and planned spending even if they have not posted yet.
 
-- Active
-- Error
-- Needs reconnect
-- Removed
+## Disconnecting
 
-## Security notes
+If you no longer want a bank connection, use the account or connection settings in CalBudget to remove it where available. Your manual forecast can still work after disconnecting.
 
-- Access tokens must be encrypted.
-- Users should be able to disconnect items.
-- Errors should be visible without exposing secrets.
-- Core planning should still work if Plaid is unavailable.
+## If a connection needs attention
+
+If a connection fails or needs to be refreshed:
+
+1. Open the relevant account or connection settings.
+2. Follow the reconnect prompt if one appears.
+3. If the issue continues, contact support from the live support widget.
+
+<Note>
+  CalBudget does not require bank login for core calendar-first budgeting.
+</Note>

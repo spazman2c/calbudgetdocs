@@ -1,61 +1,33 @@
 ---
-title: "Apple and RevenueCat billing"
-description: "How iOS subscriptions, App Store products, RevenueCat status, and local entitlement sync work."
-icon: "smartphone"
+title: "iOS billing"
+description: "Manage CalBudget subscriptions purchased through the iOS app and Apple App Store."
+icon: "apple"
 ---
 
-iOS subscriptions are handled through Apple and RevenueCat.
+If you subscribe from the iOS app, Apple manages the purchase and renewal. CalBudget shows your plan in the app, but billing changes for App Store purchases are handled through your Apple account.
 
-## Product sources
+## Manage an iOS subscription
 
-The mobile app can receive subscription state from:
+To manage a subscription purchased on iPhone:
 
-- Apple App Store server notifications
-- Apple subscription API routes
-- RevenueCat webhook events
-- RevenueCat customer lookup and fallback sync
+1. Open the **Settings** app on your iPhone.
+2. Tap your Apple ID.
+3. Tap **Subscriptions**.
+4. Select **CalBudget**.
+5. Review, change, or cancel the subscription.
 
-## Local user fields
+## If web and iOS show different plans
 
-RevenueCat and Apple fields on the user record include:
+Make sure you are signed in to CalBudget with the same account on both devices. If your iOS purchase does not appear in the web app:
 
-- Apple original transaction ID
-- Apple transaction ID
-- Apple product ID
-- Apple environment
-- Apple expiration date
-- RevenueCat app user ID
-- RevenueCat original app user ID
-- RevenueCat entitlement ID
-- RevenueCat product ID
-- RevenueCat subscription status
-- RevenueCat expiration date
-- RevenueCat management URL
-- RevenueCat synced timestamp
+1. Refresh CalBudget.
+2. Sign out and sign back in on both devices.
+3. Confirm the email or Apple sign-in identity you used.
+4. Contact support from the in-app support widget.
 
-## Trial and cancellation behavior
+Apple receipts do not include your private payment credentials. If support asks for purchase context, share the purchase email, receipt date, and plan name.
 
-A live trial grants access until it expires. If a user cancels during trial, they still keep trial access until the trial end date. After the trial ends, the user falls back to Free unless a paid entitlement exists.
+## Restoring access
 
-If the user exceeds Free limits when the trial ends, the app should block gated actions and prompt for a paid plan.
+If you reinstall the iOS app or change devices, sign in with the same CalBudget account you used before. Then check **Billing and plan** or the iOS subscription screen.
 
-## Admin visibility
-
-The admin users page should show:
-
-- RevenueCat and Apple entitlement source
-- Trialing status
-- Trial end date
-- Canceled but active-through-period status
-- Expired or trial ended state
-- Product type such as monthly, annual, plus, or advisor
-
-## Troubleshooting missing iOS users
-
-If a RevenueCat customer does not appear in admin:
-
-1. Check App User ID and aliases in RevenueCat.
-2. Look for matching email attributes.
-3. Sync all subscription sources.
-4. Verify local user identity mapping.
-5. Check whether the mobile account was created under a different auth identity.

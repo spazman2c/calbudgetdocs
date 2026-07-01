@@ -1,10 +1,10 @@
 ---
 title: "Shared access"
-description: "Invite partners, household members, or advisors with viewer, editor, and admin roles."
+description: "Invite partners, household members, or trusted helpers with view, edit, or manage access."
 icon: "users"
 ---
 
-Shared access lets an Advisor user invite another person into a budget.
+Shared access lets an Advisor user invite another trusted person into a budget.
 
 ## Roles
 
@@ -12,17 +12,16 @@ Shared access lets an Advisor user invite another person into a budget.
 | --- | --- |
 | Viewer | Can review the forecast and context. |
 | Editor | Can help edit planning data. |
-| Admin | Can manage shared access and higher-trust budget settings. |
+| Manager | Can manage shared access and higher-trust budget settings. |
 
 ## Invite workflow
 
 1. Owner opens shared access.
 2. Owner enters the invitee email and role.
-3. CalBudget creates an invite token.
-4. The email system sends an invite.
-5. The invitee opens the invite link.
-6. The invitee signs in or creates an account.
-7. Membership is created after acceptance.
+3. CalBudget sends an invite.
+4. The invitee opens the invite link.
+5. The invitee signs in or creates an account.
+6. Access begins after acceptance.
 
 ## Invite states
 
@@ -33,12 +32,11 @@ Shared access lets an Advisor user invite another person into a budget.
 
 ## Security expectations
 
-- Invite tokens are stored as hashes.
 - Invites expire.
 - Owners can revoke access.
-- Access checks should verify active membership and role.
-- Shared users should only see data they are allowed to access.
+- Shared users should only receive the access level the owner chose.
+- Owners should use the lowest access level that fits the relationship.
 
 ## Best practices
 
-Use viewer for a partner who only needs visibility. Use editor for a trusted collaborator. Use admin only when the invited person should manage access.
+Use **Viewer** for a partner who only needs visibility. Use **Editor** for a trusted collaborator. Use **Manager** only when the invited person should manage access.

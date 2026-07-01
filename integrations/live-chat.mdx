@@ -1,33 +1,30 @@
 ---
-title: "Live chat"
-description: "How the marketing site and app load the live chat widget."
+title: "Live support widget"
+description: "Use the bottom-right live support widget to contact CalBudget without leaving the platform."
 icon: "message-circle"
 ---
 
-CalBudget uses a third-party live chat widget on marketing and app surfaces.
+CalBudget includes a live support widget in the bottom-right corner of supported pages. The widget lets you contact support while keeping your calendar open.
 
-## Current widget script
+## Open the widget
 
-```html
-<script
-  src="https://woes.dev/widget.js"
-  data-public-key="trovw_agent_0569335271704cd594b3900a5448cc43">
-</script>
-```
+You can open support from:
 
-## Expected behavior
+- The bottom-right support launcher.
+- The question-mark menu in the platform.
+- **Contact CalBudget Support** from the help menu.
 
-- The widget should load on the marketing site.
-- The widget should load inside the authenticated app when allowed by CSP.
-- The widget should not cause hydration errors.
-- The widget should fail gracefully if the vendor endpoint is unavailable.
+## What to include
 
-## Troubleshooting
+Support can help faster when you include:
 
-If the widget disappears or fails:
+- What you were trying to do.
+- Which account or month you were viewing.
+- Whether the problem happens after refreshing.
+- Any visible error message.
+- Whether you are using web, desktop, or iOS.
 
-1. Check browser console for `woes.dev` network errors.
-2. Confirm the public key is active in the widget provider.
-3. Confirm CSP allows the script and network endpoints.
-4. Confirm only one widget script is active.
-5. Confirm older Ochre widget scripts were removed.
+## Privacy
+
+Do not send bank passwords, full account numbers, full card numbers, or private credentials in live chat. CalBudget support may need context about your account or forecast, but you should only share what is needed to troubleshoot.
+

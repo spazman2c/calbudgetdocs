@@ -1,49 +1,44 @@
 ---
 title: "Privacy and security"
-description: "Security, privacy, and compliance principles for CalBudget platform operations."
+description: "Understand how to use CalBudget safely and what privacy controls are available to customers."
 icon: "lock"
 ---
 
-CalBudget handles sensitive personal finance planning data. Treat it with care.
+CalBudget handles sensitive budgeting and planning information. Use it with the same care you would use for any personal finance tool.
 
-## Core principles
+## Core expectations
 
-- Collect only what is needed for the product.
-- Do not require bank login for core planning.
-- Encrypt integration secrets.
-- Do not expose secrets in logs.
-- Scope user data by authenticated user.
-- Make account deletion available.
-- Keep admin tools access-restricted.
-- Use audit logs for sensitive actions.
+- You can use CalBudget without connecting a bank account.
+- You control the transactions, categories, and accounts you create.
+- Optional integrations should be reviewed before they affect your forecast.
+- Account deletion is available from account settings where supported.
+- Advisor and AI features are informational and should not be treated as financial advice.
 
-## Data scoping
+## Keep your account safe
 
-Most app routes must verify that the authenticated user owns or can access the requested account, transaction, category, invite, or support ticket.
+- Use a strong password if you sign in with email/password.
+- Use the same provider you used to create your account.
+- Do not share your login credentials.
+- Sign out on shared devices.
+- Be careful with screenshots that show balances, account names, or transaction details.
 
-Shared access routes must also check role.
+## What not to send in support
 
-## Admin access
+Do not send:
 
-Admin routes require admin authorization. Admin actions should be logged when they affect users, billing, access, support, or content.
+- Bank passwords.
+- Full account numbers.
+- Full card numbers.
+- One-time passcodes.
+- Private credentials.
 
-## Email privacy
+Support can usually help with screenshots, dates, account names, and a description of what happened.
 
-Email logs can include recipient, subject, event status, and preview text. Avoid putting sensitive financial details into email subjects.
+## Optional AI and Advisor features
 
-## AI privacy
+AI recommendations and Advisor use forecast context to provide planning help. They are designed to be informational. They do not replace professional financial, legal, tax, credit, or investment advice.
 
-AI recommendations and Advisor should use only the data needed to answer the planning question. Users should understand that AI output is informational and optional where applicable.
+## Delete your account
 
-## Account deletion
+Use **Profile settings** to find account controls. If you need help with deletion, contact [support@calbudget.com](mailto:support@calbudget.com).
 
-Account deletion should delete user-owned data and should not require the user to contact support except for unusual regulated or legal cases.
-
-## Incident response basics
-
-1. Stop the exposure.
-2. Preserve evidence.
-3. Identify affected users and data.
-4. Rotate secrets if needed.
-5. Patch the issue.
-6. Document the timeline and remediation.

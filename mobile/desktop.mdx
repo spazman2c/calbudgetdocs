@@ -1,35 +1,35 @@
 ---
 title: "Desktop app"
-description: "Use the CalBudget desktop app on Mac and Windows for an app-like authenticated calendar experience."
+description: "Use CalBudget from the desktop app for an app-like budget calendar experience."
 icon: "monitor"
 ---
 
-The desktop app wraps the authenticated CalBudget experience in a native shell for Mac and Windows.
+The CalBudget desktop app gives you an app-like way to open the authenticated CalBudget experience on your computer.
 
-## Desktop purpose
+## What you can do
 
-The desktop app should open directly to login or the authenticated calendar. It should not show the marketing page.
+The desktop app supports the same core planning workflows as the web app:
 
-## Expected experience
+- Open your calendar.
+- Add and edit transactions.
+- Review reports.
+- Use Advisor where available.
+- Manage settings and billing.
+- Contact support.
 
-- Native window frame and controls should not overlap app navigation.
-- The window should be draggable.
-- The authenticated app should feel like the web app.
-- Calendar, transactions, reports, Advisor, and settings should work normally.
+## Sign in
 
-## Platforms
+Open the desktop app and sign in with the same CalBudget account you use on web or mobile.
 
-- Mac
-- Windows
+If sign-in opens a browser window for a provider, complete the provider flow and return to the desktop app.
 
-## Assets
+## Troubleshooting
 
-Desktop builds use signed app artifacts and platform-specific icons:
+If the desktop app does not load correctly:
 
-- `.icns` for Mac
-- `.ico` for Windows
-- `.png` source icon
+1. Quit and reopen the app.
+2. Confirm your internet connection.
+3. Sign out and sign back in.
+4. Try the web app at [calbudget.com](https://www.calbudget.com).
+5. Contact support if the problem continues.
 
-## Release note
-
-Desktop packaging is separate from the web deployment. Verify login, calendar load, window controls, and OAuth redirects before release.

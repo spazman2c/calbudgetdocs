@@ -1,54 +1,33 @@
 ---
-title: "Email system"
-description: "How CalBudget uses Resend for support, billing, lifecycle, Advisor, invite, and notification emails."
+title: "Emails and notifications"
+description: "Understand the CalBudget emails you may receive for account access, support, billing, Advisor, invites, and product updates."
 icon: "mail"
 ---
 
-CalBudget sends platform emails through Resend.
+CalBudget sends emails when they help you manage your account or understand important activity.
 
-## Email address
+## Common email types
 
-Support and reply-to email:
+You may receive emails for:
 
-[support@calbudget.com](mailto:support@calbudget.com)
+- Password reset requests.
+- Support ticket confirmations and replies.
+- Billing or subscription updates.
+- Advisor checkups and action reminders.
+- Shared budget invitations.
+- Product updates or newsletters when you opt in.
 
-## Email types
+## Notification preferences
 
-- Password reset
-- Support ticket opened
-- Support ticket reply
-- Billing and subscription events
-- Trial ended or plan notifications
-- Advisor checkups
-- Advisor action reminders
-- Shared budget invites
-- Drip and lifecycle emails
-- Newsletter or product updates when opted in
+You can manage product update and newsletter preferences from **Profile settings**. Transactional emails, such as password resets and billing notices, may still be sent when needed for your account.
 
-## Email event tracking
+## Advisor emails
 
-Email events store:
+Advisor emails are informational planning reminders. They can summarize a checkup, remind you about an open action, or point you back to the app. They are not financial advice.
 
-- Status
-- Scheduled time
-- Sent time
-- Failure time
-- Attempt count
-- Last error
-- Resend message ID
-- Delivery timestamp
-- Open timestamp and count
-- Click timestamp and count
-- Last clicked URL
+## Email safety
 
-## Retry behavior
+CalBudget will never ask you to email your bank password, full card number, or private credentials. If an email looks suspicious, open CalBudget directly from your browser instead of clicking links.
 
-Failed emails can be retried from the admin email page when the platform has enough event detail.
+For help, use the in-app support widget or email [support@calbudget.com](mailto:support@calbudget.com).
 
-## Webhooks
-
-Resend webhooks update delivery, open, and click tracking. Webhook events should be idempotent.
-
-## Operational rule
-
-Do not send customer platform email from personal Gmail. Use Resend-backed platform email so the admin log and tracking stay accurate.
