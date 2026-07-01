@@ -1,53 +1,150 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "CalBudget Docs",
+  "description": "Product documentation for CalBudget, the calendar-first budgeting platform for dated cash-flow planning, future daily balances, and Advisor-guided money decisions.",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#7C3AED",
+    "light": "#2563EB",
+    "dark": "#111827"
   },
   "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
   "navigation": {
     "pages": [
       {
-        "group": "Getting Started",
+        "group": "Start here",
         "pages": [
           "index",
-          "quickstart"
+          "quickstart",
+          "getting-started/onboarding",
+          "getting-started/first-forecast"
+        ]
+      },
+      {
+        "group": "Core app",
+        "pages": [
+          "core-features/calendar",
+          "core-features/transactions",
+          "core-features/recurring",
+          "core-features/accounts-categories",
+          "core-features/bookmarks",
+          "core-features/usage-limits"
+        ]
+      },
+      {
+        "group": "Planning tools",
+        "pages": [
+          "planning-tools/imports-reconciliation",
+          "planning-tools/reports",
+          "planning-tools/debt",
+          "planning-tools/ai-insights"
+        ]
+      },
+      {
+        "group": "Advisor",
+        "pages": [
+          "advisor/overview",
+          "advisor/chat",
+          "advisor/checkups-actions",
+          "advisor/shared-access"
+        ]
+      },
+      {
+        "group": "Plans and billing",
+        "pages": [
+          "billing/plans",
+          "billing/stripe",
+          "billing/apple-revenuecat"
+        ]
+      },
+      {
+        "group": "Account",
+        "pages": [
+          "account/auth-settings",
+          "account/profile-preferences",
+          "account/privacy-deletion"
+        ]
+      },
+      {
+        "group": "Apps and integrations",
+        "pages": [
+          "mobile/ios",
+          "mobile/desktop",
+          "integrations/plaid",
+          "integrations/email",
+          "integrations/live-chat"
+        ]
+      },
+      {
+        "group": "Support",
+        "pages": [
+          "support/help-center-tickets",
+          "support/changelog-feedback",
+          "troubleshooting/common-issues"
+        ]
+      },
+      {
+        "group": "Admin and operations",
+        "pages": [
+          "admin/overview",
+          "admin/users-subscriptions",
+          "admin/emails",
+          "admin/content",
+          "admin/support-inbox",
+          "admin/invoices-feedback",
+          "operations/release-checklist"
+        ]
+      },
+      {
+        "group": "Reference",
+        "pages": [
+          "reference/api",
+          "reference/data-model",
+          "reference/cron-jobs",
+          "reference/environment",
+          "security/privacy-security"
         ]
       }
     ],
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "App",
+          "href": "https://www.calbudget.com/login",
+          "icon": "calendar-days"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Help center",
+          "href": "https://help.calbudget.com",
+          "icon": "circle-help"
+        },
+        {
+          "anchor": "Website",
+          "href": "https://www.calbudget.com",
+          "icon": "globe"
         }
       ]
     }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@calbudget.com"
+      },
+      {
+        "label": "Blog",
+        "href": "https://www.calbudget.com/blog"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
+      "label": "Open CalBudget",
+      "href": "https://www.calbudget.com/login"
     }
   },
   "contextual": {
@@ -64,9 +161,7 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "github": "https://github.com/spazman2c/calbudgetdocs"
     }
   }
 }

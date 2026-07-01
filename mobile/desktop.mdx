@@ -1,0 +1,35 @@
+---
+title: "Desktop app"
+description: "Use the CalBudget desktop app on Mac and Windows for an app-like authenticated calendar experience."
+icon: "monitor"
+---
+
+The desktop app wraps the authenticated CalBudget experience in a native shell for Mac and Windows.
+
+## Desktop purpose
+
+The desktop app should open directly to login or the authenticated calendar. It should not show the marketing page.
+
+## Expected experience
+
+- Native window frame and controls should not overlap app navigation.
+- The window should be draggable.
+- The authenticated app should feel like the web app.
+- Calendar, transactions, reports, Advisor, and settings should work normally.
+
+## Platforms
+
+- Mac
+- Windows
+
+## Assets
+
+Desktop builds use signed app artifacts and platform-specific icons:
+
+- `.icns` for Mac
+- `.ico` for Windows
+- `.png` source icon
+
+## Release note
+
+Desktop packaging is separate from the web deployment. Verify login, calendar load, window controls, and OAuth redirects before release.

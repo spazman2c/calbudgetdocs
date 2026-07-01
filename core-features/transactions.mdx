@@ -1,0 +1,68 @@
+---
+title: "Transactions"
+description: "Create, edit, move, clear, categorize, and bookmark transactions in CalBudget."
+icon: "receipt"
+---
+
+Transactions are the dated money events that build the forecast.
+
+## Transaction fields
+
+| Field | Purpose |
+| --- | --- |
+| Title | Name shown on the calendar. |
+| Amount | Positive numeric amount. A leading `+` or `-` can hint income or expense while typing. |
+| Type | Income increases the balance. Expense decreases it. |
+| Date | Calendar date that the item affects the account. |
+| Account | Account forecast that owns the transaction. |
+| Category | Income or expense label and color. |
+| Repeat | Optional recurring rule. |
+| Notes | Optional planning context. |
+| Website URL | Optional merchant or bill URL. `https://` is added automatically when omitted. |
+| Cleared | Marks posted or confirmed items. |
+
+## Signed amount shortcuts
+
+The transaction form detects signs in the amount field:
+
+- `+130` switches the transaction type to income and stores amount `130`.
+- `-42.50` switches the transaction type to expense and stores amount `42.50`.
+- `42.50` keeps the currently selected type.
+
+## Website URL normalization
+
+Users do not need to type the protocol. For example:
+
+```text
+netflix.com
+```
+
+is saved as:
+
+```text
+https://netflix.com/
+```
+
+Invalid protocols are rejected.
+
+## Moving transactions
+
+Transactions can be moved by dragging on the calendar or editing the date. Moving a transaction changes the running balance for every day after the old and new dates.
+
+## Recurring transaction edits
+
+For recurring transactions, users can choose scope:
+
+- One occurrence
+- Future occurrences
+- All occurrences in the series
+
+Use one occurrence for exceptions. Use future or all occurrences for permanent schedule changes.
+
+## Cleared state
+
+Cleared means the transaction has posted or has been confirmed. It does not remove the item from the forecast. It helps separate plan from reality.
+
+## Delete behavior and free limits
+
+Free plan transaction usage is lifetime-based. Deleting a transaction does not reset the free transaction count.

@@ -1,0 +1,54 @@
+---
+title: "Email system"
+description: "How CalBudget uses Resend for support, billing, lifecycle, Advisor, invite, and notification emails."
+icon: "mail"
+---
+
+CalBudget sends platform emails through Resend.
+
+## Email address
+
+Support and reply-to email:
+
+[support@calbudget.com](mailto:support@calbudget.com)
+
+## Email types
+
+- Password reset
+- Support ticket opened
+- Support ticket reply
+- Billing and subscription events
+- Trial ended or plan notifications
+- Advisor checkups
+- Advisor action reminders
+- Shared budget invites
+- Drip and lifecycle emails
+- Newsletter or product updates when opted in
+
+## Email event tracking
+
+Email events store:
+
+- Status
+- Scheduled time
+- Sent time
+- Failure time
+- Attempt count
+- Last error
+- Resend message ID
+- Delivery timestamp
+- Open timestamp and count
+- Click timestamp and count
+- Last clicked URL
+
+## Retry behavior
+
+Failed emails can be retried from the admin email page when the platform has enough event detail.
+
+## Webhooks
+
+Resend webhooks update delivery, open, and click tracking. Webhook events should be idempotent.
+
+## Operational rule
+
+Do not send customer platform email from personal Gmail. Use Resend-backed platform email so the admin log and tracking stay accurate.

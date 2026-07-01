@@ -1,0 +1,73 @@
+---
+title: "Common issues"
+description: "Troubleshoot sign-in, subscription sync, widget loading, hydration errors, imports, and calendar display issues."
+icon: "wrench"
+---
+
+This page collects common troubleshooting paths.
+
+## User paid but still sees Free
+
+1. Confirm the user email.
+2. Check Stripe, Apple, or RevenueCat source.
+3. Run Sync all in admin.
+4. Confirm local entitlement.
+5. Ask user to refresh or sign out and back in.
+
+## RevenueCat trial user not visible
+
+1. Search by RevenueCat App User ID.
+2. Search by alias.
+3. Check customer email attributes.
+4. Run Sync all.
+5. Verify mobile auth mapped to the same CalBudget user.
+
+## Invalid email or password
+
+1. Confirm whether the user uses email/password or social auth.
+2. If email/password, use password reset.
+3. If Google or Apple, use that provider.
+4. Check auth provider configuration.
+5. Confirm mobile app and web app call the same auth backend.
+
+## React hydration error 418
+
+Hydration errors usually mean server-rendered text or HTML does not match the client render.
+
+Check:
+
+- Date/time formatting during render
+- Random values during render
+- Browser-only data used before mount
+- Third-party scripts mutating DOM
+- Theme or user state that differs server/client
+
+## Live chat widget 404
+
+If `woes.dev` config returns 404, the issue is likely provider-side configuration or public key status. Confirm the widget account and public key.
+
+## Calendar looks crowded
+
+Check:
+
+- Day cell height
+- Transaction overflow behavior
+- Expanded day state
+- Font size
+- Adjacent month cells
+- Horizontal scroll on mobile
+
+## Import signs look wrong
+
+Check whether the statement is a debit card, bank account, or credit card export. Credit card statements may use inverted signs.
+
+## Email failed
+
+Check:
+
+- Resend API key
+- Resend domain
+- Recipient email
+- Email event last error
+- Webhook status
+- Retry eligibility

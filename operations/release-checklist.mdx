@@ -1,0 +1,65 @@
+---
+title: "Release checklist"
+description: "Checklist for shipping CalBudget web, iOS, desktop, docs, and operational changes."
+icon: "list-checks"
+---
+
+Use this checklist before major releases.
+
+## Web release
+
+- Run typecheck.
+- Run focused lint for touched files.
+- Run tests.
+- Run production build.
+- Verify login.
+- Verify calendar loads.
+- Verify transaction create/edit/delete.
+- Verify billing upgrade and portal routes.
+- Verify support ticket create/reply.
+- Verify live chat widget loads.
+
+## Billing release
+
+- Confirm Stripe price IDs.
+- Confirm Apple and RevenueCat product IDs.
+- Confirm webhook endpoints.
+- Confirm admin sync all.
+- Test canceling and trial-ended states.
+- Confirm Free fallback and gating.
+
+## Advisor release
+
+- Verify Advisor entitlement.
+- Open Advisor chat.
+- Generate checkup.
+- Generate actions.
+- Mark action complete and dismissed.
+- Send reminder job in a safe environment.
+- Verify shared access invite and accept flow.
+
+## iOS release
+
+- Confirm version and build number are higher than previous approved train.
+- Confirm iPhone-only or iPad support settings match App Store Connect.
+- Confirm supported orientations match target device support.
+- Verify Sign in with Apple.
+- Verify email/password login.
+- Verify subscription purchase metadata.
+- Verify privacy and terms links.
+- Capture screenshots required by App Store Connect.
+
+## Desktop release
+
+- Verify Mac and Windows icons.
+- Verify code signing.
+- Verify window drag and close controls.
+- Verify app opens to login/calendar.
+- Verify OAuth redirects and session persistence.
+
+## Docs release
+
+- Update docs for changed features.
+- Check links.
+- Check navigation.
+- Publish or merge docs branch.

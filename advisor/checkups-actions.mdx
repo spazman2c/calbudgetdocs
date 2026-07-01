@@ -1,0 +1,62 @@
+---
+title: "Checkups and actions"
+description: "How weekly Advisor checkups, generated action plans, and reminder emails work."
+icon: "list-checks"
+---
+
+Advisor checkups turn forecast data into a short weekly review.
+
+## Checkup output
+
+A checkup includes:
+
+- Title
+- Summary
+- Risk level
+- Lowest balance date
+- Lowest balance amount
+- Projected finish
+- Action items
+- Watchlist transactions
+
+## Risk levels
+
+| Risk level | Meaning |
+| --- | --- |
+| Critical | The forecast shows a serious low-balance or negative-cash risk. |
+| Watch | The forecast is not failing, but a date deserves attention. |
+| Steady | The forecast appears stable based on available data. |
+| Empty | There is not enough data to produce a useful checkup. |
+
+## Generation cadence
+
+Weekly checkups are generated for Advisor users. A fresh checkup is reused when it exists within the freshness window.
+
+## Action generation
+
+Actions are created from checkup items and account context. Examples:
+
+- Fix the low-balance gap.
+- Protect the low-balance day.
+- Review the largest outflow category.
+- Confirm the next important transaction.
+
+## Action statuses
+
+- Open
+- Completed
+- Dismissed
+
+## Reminder emails
+
+Advisor action reminders are sent for open actions that are due or near due. Reminder emails use the platform email system and reply-to support.
+
+## Admin notes
+
+Checkup and action cron jobs should be monitored for:
+
+- Generated count
+- Emailed count
+- Skipped count
+- Error count
+- Duplicate prevention

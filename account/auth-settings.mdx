@@ -1,0 +1,54 @@
+---
+title: "Authentication and sign-in"
+description: "Understand CalBudget web and mobile authentication, password reset, Apple sign-in, and Google sign-in."
+icon: "key-round"
+---
+
+CalBudget supports account creation and sign-in across web, iOS, and desktop.
+
+## Web authentication
+
+The web app supports:
+
+- Email and password
+- Google sign-in
+- Password reset
+- Session-based authenticated app access
+
+Password reset is for email/password accounts. Google accounts do not need a CalBudget password reset.
+
+## Mobile authentication
+
+The iOS app supports:
+
+- Sign in with Apple
+- Email and password
+
+Google sign-in was removed from the iOS app by product decision.
+
+## Password requirements
+
+Passwords must include:
+
+- At least 10 characters
+- An uppercase letter
+- A lowercase letter
+- A number
+- A special character
+
+## Password reset flow
+
+1. User requests password reset.
+2. CalBudget creates a reset token.
+3. The user receives an email.
+4. The reset page validates the token.
+5. The user sets a new password.
+6. The token is marked used.
+
+## Account deletion
+
+Apps that support account creation must support account deletion. CalBudget provides account deletion controls in settings.
+
+## Admin note
+
+Do not manually email passwords. Use reset flows or auth-provider-supported reset mechanisms.

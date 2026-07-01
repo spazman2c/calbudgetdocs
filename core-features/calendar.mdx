@@ -1,0 +1,63 @@
+---
+title: "Calendar"
+description: "Understand the CalBudget calendar, running balance, month signals, and low-balance planning."
+icon: "calendar"
+---
+
+The calendar is the center of CalBudget. It shows the money events that affect an account and the projected balance for each day.
+
+## Calendar model
+
+Each account has its own forecast. Transactions are placed on the date they affect the account. CalBudget applies them in date order and carries the balance forward.
+
+## What appears on a day
+
+- Day number
+- Projected balance
+- Income and expense transactions
+- Recurring occurrences
+- Cleared state
+- Overflow count when a day has more transactions than fit
+
+Clicking an overflow indicator should expand the day so the user can review all transactions on that date.
+
+## Running balance
+
+The running balance is the projected account balance after the day's transactions are applied.
+
+| Signal | Meaning |
+| --- | --- |
+| Starting balance | The current known balance for the account. |
+| Daily balance | The projected balance after that date's items. |
+| Lowest balance | The lowest projected day in the visible range. |
+| Projected finish | The expected balance at the end of the period. |
+
+## Month signals
+
+Month signals summarize whether the plan is safe.
+
+- **Income used** compares planned outflow against income.
+- **Cleared** shows how much of the month has posted or been confirmed.
+- **Recurring load** shows how much predictable spending is already loaded.
+
+If a percentage exceeds a safe threshold, it should be visually clear. Over-limit values should use a warning color.
+
+## Calendar range
+
+The top balance chart covers 12 months from the selected month. For example, selecting May should show May through the following May.
+
+## Common actions
+
+- Add a transaction to a selected date.
+- Drag a transaction to another day.
+- Select a transaction to edit it.
+- Mark transactions cleared.
+- Move recurring instances one time or as a series.
+- Expand busy days.
+
+## Best practices
+
+- Use the calendar for future decisions, not just record keeping.
+- Keep the next 30 to 90 days accurate.
+- Review the lowest balance before adding optional spending.
+- Update the balance when reality changes.
