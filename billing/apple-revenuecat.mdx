@@ -1,0 +1,61 @@
+---
+title: "Apple and RevenueCat billing"
+description: "How iOS subscriptions, App Store products, RevenueCat status, and local entitlement sync work."
+icon: "smartphone"
+---
+
+iOS subscriptions are handled through Apple and RevenueCat.
+
+## Product sources
+
+The mobile app can receive subscription state from:
+
+- Apple App Store server notifications
+- Apple subscription API routes
+- RevenueCat webhook events
+- RevenueCat customer lookup and fallback sync
+
+## Local user fields
+
+RevenueCat and Apple fields on the user record include:
+
+- Apple original transaction ID
+- Apple transaction ID
+- Apple product ID
+- Apple environment
+- Apple expiration date
+- RevenueCat app user ID
+- RevenueCat original app user ID
+- RevenueCat entitlement ID
+- RevenueCat product ID
+- RevenueCat subscription status
+- RevenueCat expiration date
+- RevenueCat management URL
+- RevenueCat synced timestamp
+
+## Trial and cancellation behavior
+
+A live trial grants access until it expires. If a user cancels during trial, they still keep trial access until the trial end date. After the trial ends, the user falls back to Free unless a paid entitlement exists.
+
+If the user exceeds Free limits when the trial ends, the app should block gated actions and prompt for a paid plan.
+
+## Admin visibility
+
+The admin users page should show:
+
+- RevenueCat and Apple entitlement source
+- Trialing status
+- Trial end date
+- Canceled but active-through-period status
+- Expired or trial ended state
+- Product type such as monthly, annual, plus, or advisor
+
+## Troubleshooting missing iOS users
+
+If a RevenueCat customer does not appear in admin:
+
+1. Check App User ID and aliases in RevenueCat.
+2. Look for matching email attributes.
+3. Sync all subscription sources.
+4. Verify local user identity mapping.
+5. Check whether the mobile account was created under a different auth identity.

@@ -1,33 +1,28 @@
-> **First-time setup**: Customize this file for your project. Prompt the user to customize this file for their project.
-> For Mintlify product knowledge (components, configuration, writing standards),
-> install the Mintlify skill: `npx skills add https://mintlify.com/docs`
+# CalBudget docs instructions
 
-# Documentation project instructions
+This repository is the Mintlify documentation site for CalBudget.
 
-## About this project
+## Project rules
 
-- This is a documentation site built on [Mintlify](https://mintlify.com)
-- Pages are MDX files with YAML frontmatter
-- Configuration lives in `docs.json`
-- Use the Mintlify MCP server, `https://mcp.mintlify.com`, to edit content and settings via MCP
-- Use the Mintlify docs MCP server, `https://www.mintlify.com/docs/mcp`, to query information about using Mintlify via MCP
+- Pages are MDX files with YAML frontmatter.
+- Site configuration lives in `docs.json`.
+- Use active voice and second person.
+- Keep headings in sentence case.
+- Use **bold** for UI labels, buttons, and menu items.
+- Use code formatting for file names, route paths, commands, IDs, and environment variables.
+- Prefer practical, task-based documentation over marketing copy.
 
-## Terminology
+## Product language
 
-{/* Add product-specific terms and preferred usage */}
-{/* Example: Use "workspace" not "project", "member" not "user" */}
-
-## Style preferences
-
-{/* Add any project-specific style rules below */}
-
-- Use active voice and second person ("you")
-- Keep sentences concise — one idea per sentence
-- Use sentence case for headings
-- Bold for UI elements: Click **Settings**
-- Code formatting for file names, commands, paths, and code references
+- Use **CalBudget** for the product.
+- Use **Advisor** for the guided AI planning plan and feature set.
+- Use **Free**, **Plus**, and **Advisor** for plan names.
+- Use **support@calbudget.com** as the support email.
+- Say "calendar-first budgeting" or "budget calendar" when describing the core product.
+- Do not describe CalBudget as financial advice.
 
 ## Content boundaries
 
-{/* Define what should and shouldn't be documented */}
-{/* Example: Don't document internal admin features */}
+- Customer docs can explain product behavior and troubleshooting.
+- Admin docs can describe internal operations, but should not include secrets.
+- Do not commit API keys, tokens, customer personal data, screenshots with private details, or production credentials.

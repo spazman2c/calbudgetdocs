@@ -1,0 +1,39 @@
+---
+title: "Plaid integration"
+description: "Optional Plaid account linking, item storage, account sync, and planning boundaries."
+icon: "link"
+---
+
+Plaid is optional. CalBudget does not require bank login for core planning.
+
+## Plaid data model
+
+Plaid integration stores:
+
+- Plaid item ID
+- Encrypted access token
+- Institution ID and name
+- Item status
+- Transaction cursor
+- Last sync timestamps
+- Error details
+- Linked Plaid accounts
+- Balance information
+
+## User expectation
+
+Plaid should help users bring bank context into the app, but the forecast remains a planning surface. Users should still review data before relying on it.
+
+## Common states
+
+- Active
+- Error
+- Needs reconnect
+- Removed
+
+## Security notes
+
+- Access tokens must be encrypted.
+- Users should be able to disconnect items.
+- Errors should be visible without exposing secrets.
+- Core planning should still work if Plaid is unavailable.

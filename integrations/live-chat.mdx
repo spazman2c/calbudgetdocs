@@ -1,0 +1,33 @@
+---
+title: "Live chat"
+description: "How the marketing site and app load the live chat widget."
+icon: "message-circle"
+---
+
+CalBudget uses a third-party live chat widget on marketing and app surfaces.
+
+## Current widget script
+
+```html
+<script
+  src="https://woes.dev/widget.js"
+  data-public-key="trovw_agent_0569335271704cd594b3900a5448cc43">
+</script>
+```
+
+## Expected behavior
+
+- The widget should load on the marketing site.
+- The widget should load inside the authenticated app when allowed by CSP.
+- The widget should not cause hydration errors.
+- The widget should fail gracefully if the vendor endpoint is unavailable.
+
+## Troubleshooting
+
+If the widget disappears or fails:
+
+1. Check browser console for `woes.dev` network errors.
+2. Confirm the public key is active in the widget provider.
+3. Confirm CSP allows the script and network endpoints.
+4. Confirm only one widget script is active.
+5. Confirm older Ochre widget scripts were removed.

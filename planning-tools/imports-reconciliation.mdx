@@ -1,0 +1,59 @@
+---
+title: "Imports and reconciliation"
+description: "Use CSV, OFX, QFX, Plaid, category rules, and review workflows to turn statement data into useful planning context."
+icon: "upload"
+---
+
+CalBudget is manual-first, but it includes import and reconciliation tools for users who want help from real transaction history.
+
+## Import goals
+
+Imports are designed to:
+
+- Detect recurring income and expenses.
+- Help users reconcile planned transactions against posted history.
+- Avoid requiring a bank login for the core product.
+- Keep the user in control before changes affect the calendar.
+
+## Supported statement files
+
+- CSV
+- OFX
+- QFX
+
+The parser normalizes debit and credit signs, detects common statement formats, and stores raw row metadata for review.
+
+## Reconciliation workflow
+
+1. Upload a statement.
+2. CalBudget creates an import batch.
+3. Rows are normalized into reviewable import rows.
+4. The app suggests matches against existing planned transactions.
+5. The user accepts matches, creates new transactions, or ignores rows.
+6. The session is committed.
+
+## Match signals
+
+Suggested matches use:
+
+- Account ownership
+- Amount
+- Nearby dates
+- Similar transaction title
+- External fingerprint
+
+## Category rules
+
+Category rules can apply categories during import review. Rules have priority so a more specific rule can win over a generic one.
+
+## Plaid status
+
+Plaid support exists as an optional integration surface. The core product does not require Plaid. Users can still plan entirely manually.
+
+## Paid access
+
+Imports and reconciliation are paid features. Free users should see an upgrade prompt before using them.
+
+<Warning>
+  Imports should never silently overwrite a user's forecast. Review and commit steps are important because planning data can be different from posted bank history.
+</Warning>

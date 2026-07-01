@@ -1,0 +1,49 @@
+---
+title: "Privacy and security"
+description: "Security, privacy, and compliance principles for CalBudget platform operations."
+icon: "lock"
+---
+
+CalBudget handles sensitive personal finance planning data. Treat it with care.
+
+## Core principles
+
+- Collect only what is needed for the product.
+- Do not require bank login for core planning.
+- Encrypt integration secrets.
+- Do not expose secrets in logs.
+- Scope user data by authenticated user.
+- Make account deletion available.
+- Keep admin tools access-restricted.
+- Use audit logs for sensitive actions.
+
+## Data scoping
+
+Most app routes must verify that the authenticated user owns or can access the requested account, transaction, category, invite, or support ticket.
+
+Shared access routes must also check role.
+
+## Admin access
+
+Admin routes require admin authorization. Admin actions should be logged when they affect users, billing, access, support, or content.
+
+## Email privacy
+
+Email logs can include recipient, subject, event status, and preview text. Avoid putting sensitive financial details into email subjects.
+
+## AI privacy
+
+AI recommendations and Advisor should use only the data needed to answer the planning question. Users should understand that AI output is informational and optional where applicable.
+
+## Account deletion
+
+Account deletion should delete user-owned data and should not require the user to contact support except for unusual regulated or legal cases.
+
+## Incident response basics
+
+1. Stop the exposure.
+2. Preserve evidence.
+3. Identify affected users and data.
+4. Rotate secrets if needed.
+5. Patch the issue.
+6. Document the timeline and remediation.

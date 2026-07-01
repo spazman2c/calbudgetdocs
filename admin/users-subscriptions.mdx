@@ -1,0 +1,74 @@
+---
+title: "Users and subscriptions"
+description: "Admin guide for user search, plan status, subscription sync, trial visibility, and access overrides."
+icon: "users"
+---
+
+The users page is the main place to troubleshoot access.
+
+## What the users table should show
+
+- Name and email
+- Signup source
+- Access plan
+- Subscription status
+- Trial end date when trialing
+- Trial ended status when expired
+- Billing source
+- Usage summary
+- Transaction count
+- Account and recurring counts
+
+The table should paginate. A useful default is 20 users per page.
+
+## Subscription status display
+
+Show both status and context:
+
+- Active
+- Trialing
+- Trial ends date
+- Trial ended
+- Canceling at period end
+- Canceled
+- Past due
+- Free
+
+If a trialing user cancels but the trial is still active, show that they are trialing and canceled at period end. Once the trial ends, they should fall back to Free.
+
+## Sync all
+
+The admin sync action should refresh:
+
+- Stripe
+- Apple
+- RevenueCat
+
+RevenueCat and Apple are related but not identical operational sources. Syncing all helps catch mobile subscription changes that do not appear in Stripe.
+
+## Access override
+
+Admins can manually grant Plus or Advisor access. Use this for:
+
+- Support fixes
+- Testing
+- Temporary compensation
+
+Manual access should be visible so operators know it is not coming from Stripe or Apple.
+
+## Troubleshooting paid user still shown as Free
+
+1. Confirm the user's email.
+2. Check Stripe customer or RevenueCat customer.
+3. Run Sync all.
+4. Check local subscription fields.
+5. Confirm entitlement source and plan.
+6. Ask the user to refresh or sign out and back in.
+
+## Troubleshooting RevenueCat user missing
+
+1. Copy RevenueCat App User ID and aliases.
+2. Search admin by email, RevenueCat App User ID, and original App User ID.
+3. Check RevenueCat attributes for email.
+4. Run Sync all.
+5. Confirm mobile auth account mapping.

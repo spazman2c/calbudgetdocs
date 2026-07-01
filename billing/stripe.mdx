@@ -1,0 +1,60 @@
+---
+title: "Stripe billing"
+description: "How web subscriptions, checkout, portal management, webhooks, and subscription sync work."
+icon: "credit-card"
+---
+
+Stripe powers web subscriptions for Plus and Advisor.
+
+## Stripe surfaces
+
+| Surface | Purpose |
+| --- | --- |
+| Checkout | Starts a paid subscription. |
+| Customer portal | Lets users manage payment method, cancellation, and invoices. |
+| Webhook | Updates local subscription fields when Stripe changes. |
+| Reconcile cron | Refreshes subscription state in case webhooks are delayed or missed. |
+| Admin sync | Lets operators manually refresh subscription state. |
+
+## Local user fields
+
+Stripe state is stored on the user record:
+
+- Stripe customer ID
+- Stripe subscription ID
+- Stripe price ID
+- Stripe product ID
+- Stripe plan
+- Subscription status
+- Trial end
+- Current period end
+- Cancel-at-period-end state
+- Cancel timestamps
+- Last synced timestamp
+
+## Status expectations
+
+Active and valid trialing subscriptions grant access. Past due, unpaid, canceled, and incomplete-expired states should not grant paid access unless a manual override exists.
+
+## Canceling subscriptions
+
+Canceling at period end should still grant access through the paid period. The UI should show that the subscription is canceling, not immediately free.
+
+## Manual reconciliation
+
+Use admin sync when:
+
+- A user paid in Stripe but still sees Free.
+- A webhook was delayed.
+- A customer has multiple Stripe subscriptions.
+- A cancellation is not reflected in the admin panel.
+
+## Customer support script
+
+If a user says Stripe shows active but CalBudget does not:
+
+1. Open the user in admin.
+2. Confirm email and Stripe customer ID.
+3. Run subscription sync.
+4. Check access plan and subscription status.
+5. Ask the user to refresh or sign out and back in.
