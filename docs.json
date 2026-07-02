@@ -22,7 +22,12 @@
             "group": "Start here",
             "pages": [
               "index",
+              "quickstart",
               "getting-started",
+              "getting-started/onboarding",
+              "getting-started/first-forecast",
+              "platform/app-map",
+              "platform/daily-workflow",
               "plans-and-billing"
             ]
           },
@@ -33,7 +38,11 @@
               "calendar/transactions",
               "calendar/recurring-transactions",
               "calendar/recurring-balances",
-              "calendar/bookmarks"
+              "calendar/bookmarks",
+              "core-features/calendar",
+              "core-features/transactions",
+              "core-features/recurring",
+              "core-features/bookmarks"
             ]
           },
           {
@@ -43,9 +52,11 @@
               "accounts/plaid-beta",
               "accounts/categories",
               "accounts/category-rules",
+              "core-features/accounts-categories",
               "import/importing-bank-statements",
               "import/reconcile-statements",
-              "import/detect-recurring"
+              "import/detect-recurring",
+              "planning-tools/imports-reconciliation"
             ]
           },
           {
@@ -53,26 +64,47 @@
             "pages": [
               "reports/overview",
               "reports/ai-financial-report",
+              "planning-tools/reports",
               "forecast/how-forecast-works",
-              "debt/debt-payoff-planner"
+              "debt/debt-payoff-planner",
+              "planning-tools/debt",
+              "planning-tools/ai-insights",
+              "core-features/usage-limits"
             ]
           },
           {
-            "group": "Navigator",
+            "group": "Navigator and Advisor",
             "pages": [
               "navigator/overview",
               "navigator/checkups-and-action-plans",
               "navigator/voice",
-              "navigator/shared-access"
+              "navigator/shared-access",
+              "advisor/overview",
+              "advisor/chat",
+              "advisor/checkups-actions",
+              "advisor/shared-access"
             ]
           },
           {
-            "group": "Settings and support",
+            "group": "Account, apps, and support",
             "pages": [
               "settings/profile-and-appearance",
-              "settings/delete-account",
+              "account/profile-preferences",
+              "account/auth-settings",
+              "account/privacy-deletion",
+              "mobile/ios",
+              "mobile/desktop",
+              "integrations/plaid",
+              "integrations/email",
+              "integrations/live-chat",
+              "security/privacy-security",
+              "platform/settings-and-support",
               "support/contact-support",
-              "support/troubleshooting"
+              "support/help-center-tickets",
+              "support/changelog-feedback",
+              "support/troubleshooting",
+              "troubleshooting/common-issues",
+              "settings/delete-account"
             ]
           }
         ]
@@ -102,6 +134,49 @@
           }
         ]
       }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "App",
+          "href": "https://www.calbudget.com/login",
+          "icon": "calendar-days"
+        },
+        {
+          "anchor": "Website",
+          "href": "https://www.calbudget.com",
+          "icon": "globe"
+        }
+      ]
+    }
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:support@calbudget.com"
+      },
+      {
+        "label": "Blog",
+        "href": "https://www.calbudget.com/blog"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Open CalBudget",
+      "href": "https://www.calbudget.com/login"
+    }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
     ]
   }
 }

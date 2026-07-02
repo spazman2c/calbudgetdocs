@@ -1,0 +1,51 @@
+---
+title: "Advisor chat"
+description: "How Advisor chat uses forecast context to answer cash-flow planning questions."
+icon: "messages-square"
+---
+
+Advisor chat helps users ask questions about their forecast in plain language.
+
+## Starter prompts
+
+The app includes prompts such as:
+
+- What should I watch before my next paycheck?
+- Which bill timing change would help the most?
+- Explain my lowest balance day.
+- What is one safe next action this week?
+
+## Conversation context
+
+Each conversation can be linked to an account. Advisor loads the selected account context before answering.
+
+Useful context includes:
+
+- Account name and balance
+- Date range
+- Future income and expenses
+- Top outflow categories
+- Upcoming transactions
+- Previous Advisor messages
+- Recent checkups
+
+## Fallback behavior
+
+If the AI provider is unavailable, Advisor can return a built-in forecast summary. The app should clearly tell the user when a fallback response was used.
+
+## Good questions for Advisor
+
+- "What date should I worry about?"
+- "Which transaction would help most if I moved it?"
+- "Can I add a $200 payment this week?"
+- "What is making next week tight?"
+- "What should I do before my next paycheck?"
+
+## Limits
+
+Advisor should not:
+
+- Guarantee outcomes.
+- Give investment, legal, tax, or credit advice.
+- Tell users to take irreversible financial actions.
+- Hide uncertainty when the forecast data is incomplete.
