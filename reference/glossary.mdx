@@ -1,0 +1,116 @@
+---
+title: "Terminology and Glossary"
+description: "Preferred CalBudget wording for customer docs, support docs, and internal documentation handoff."
+---
+
+<Warning>
+  This glossary normalizes customer-facing names across the consumer app, CalBudget Business, support, and docs.
+</Warning>
+
+## Naming rules
+
+Use these names consistently in public docs:
+
+| Use | Avoid | Notes |
+| --- | --- | --- |
+| CalBudget | CalendarBudget, Calendar Budget | Use the brand name as one word. |
+| CalBudget Business | Legacy/internal business project names | BIZ customer-facing docs should use CalBudget Business. |
+| CalBudget Navigator | Advisor | "Advisor" is legacy/internal terminology in code and routes. |
+| AI Financial Report | Navigator report | Keep AI Financial Report separate from Navigator chat, checkups, and action plans. |
+| Plaid bank sync beta | Bank sync, Plaid import, automatic bank login | Plaid is beta and admin-gated. |
+| Planned transaction | Unclear pending transaction wording | Use if the UI means a future or not-yet-cleared item. |
+| Cleared transaction | Posted transaction | "Cleared" maps to the app's reconciliation state. |
+| Expense | Outflow | Prefer plain customer language. |
+| Income | Inflow | Prefer plain customer language. |
+| Account starting balance | Opening balance, initial cash | Use for the account value that anchors forecasts. |
+| Recurring balance tracker starting balance | Starting balance | Use the longer phrase when documenting payoff or savings tracking on a recurring series. |
+| Biweekly | Every two weeks | Preferred cadence label. |
+| Twice monthly | Semi-monthly | Preferred cadence label unless the UI currently says otherwise. |
+
+## Product surfaces
+
+### Consumer CalBudget
+
+Consumer CalBudget is the personal finance app. It includes the calendar, transactions, accounts, categories, imports, reports, debt tools, billing, support, and Navigator features.
+
+Mention these routes only when helpful:
+
+| Term | Meaning |
+| --- | --- |
+| Calendar | The main `/calendar/[year]/[month]` cash-flow view. |
+| Billing | The user's subscription and plan management surface. |
+| Debt payoff planner | The `/debt` planning surface for payoff strategies. |
+| Support | The public contact page and authenticated in-app support ticket flow. |
+
+### CalBudget Business / BIZ
+
+CalBudget Business is the business-only product lane for SaaS spend audit and renewal control. It must stay separate from consumer CalBudget in docs and implementation notes.
+
+Use `BIZ` for internal shorthand only when the context is engineering, routing, or data boundaries.
+
+## Finance terms
+
+| Term | Definition |
+| --- | --- |
+| Account | A user-created cash, checking, savings, credit, or other balance container used for forecasts. |
+| Account starting balance | The amount CalBudget uses as the starting point for running balances. |
+| Transaction | A dated income or expense entry on the calendar. |
+| Recurring transaction | A transaction series that generates future occurrences based on a cadence. |
+| Recurrence group | Internal concept for related recurring transaction occurrences. Use "series" publicly. |
+| Running balance | The balance shown day by day after applying dated transactions. |
+| Forecast | CalBudget's projection from starting balance, dated transactions, and recurring generated rows. |
+| Lowest balance | The projected low point in a selected period. Useful for timing risk. |
+| Cleared | A transaction has been confirmed or reconciled. |
+| Planned | A transaction is expected but not yet cleared. |
+| Category | A user-defined income or expense label used for filtering and reports. |
+| Category rule | A matching rule that can categorize imported transactions. |
+| Bookmark | A saved transaction template for quick entry. |
+| Recurring balance tracker | A recurring series with payoff or savings progress tracked against a starting balance or goal. |
+
+## Import and reconciliation terms
+
+| Term | Definition |
+| --- | --- |
+| Statement import | Uploading CSV, OFX, QFX, or TXT statement data. |
+| Reconciliation | Reviewing imported rows and deciding whether each should match, create, or be ignored. |
+| Match | Connects an imported row to an existing transaction and marks it cleared. |
+| Create | Adds a new cleared transaction from an imported row. |
+| Ignore | Skips an imported row. |
+| Recurring detection | Finding likely recurring bills or income from statement history. |
+
+## Navigator terms
+
+| Term | Definition |
+| --- | --- |
+| CalBudget Navigator | The paid AI guidance feature set. |
+| Checkup | Navigator's periodic review of budget state and risk. |
+| Action plan | A list of suggested actions from Navigator that can be completed over time. |
+| Navigator voice | Browser-based voice command entry for supported CalBudget actions. |
+| Shared access | Inviting another person to view or edit a budget with role-based access. |
+
+## Billing and access terms
+
+| Term | Definition |
+| --- | --- |
+| Free | Entry plan with account, transaction, recurring series, and bookmark limits. |
+| Plus | Paid plan for unlimited core planning, imports, reports, and debt tools. |
+| Navigator | Paid tier or add-on for Navigator features, depending on current packaging. |
+| Stripe billing | Web checkout and subscription management. |
+| App Store billing | Apple purchase path, represented internally through Apple and/or RevenueCat state. |
+| Free access | Temporary internal access grant. Do not position it as a public plan. |
+
+## Screenshot and asset language
+
+Use precise labels:
+
+| Label | When to use |
+| --- | --- |
+| Screenshot | A real capture from the current CalBudget product or a seeded sandbox account. |
+| Example | A realistic, truthful scenario using real UI. |
+| Illustration | Decorative or conceptual art that does not prove product behavior. |
+| Placeholder | Temporary visual that must be replaced before publication. |
+| Template asset | Generic imported marketing or theme asset. Never use it as product proof. |
+
+<Warning>
+  Never call fake, generated, template, or marketing mock images "screenshots." If an image is not captured from the real product, label it as decorative, illustrative, demo, or placeholder.
+</Warning>

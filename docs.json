@@ -2,148 +2,110 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "CalBudget Docs",
-  "description": "Product documentation for CalBudget, the calendar-first budgeting platform for dated cash-flow planning, future daily balances, and Advisor-guided money decisions.",
-  "colors": {
-    "primary": "#7C3AED",
-    "light": "#2563EB",
-    "dark": "#111827"
-  },
-  "favicon": "/favicon.svg",
+  "description": "Customer documentation for CalBudget, the calendar-first budget and cash-flow planning app.",
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/images/calbudget/calbudget-logo.png",
+    "dark": "/images/calbudget/calbudget-logo.png"
+  },
+  "favicon": "/images/calbudget/calbudget-icon.png",
+  "colors": {
+    "primary": "#14b8a6",
+    "light": "#f8fafc",
+    "dark": "#020617"
   },
   "navigation": {
-    "pages": [
+    "tabs": [
       {
-        "group": "Start here",
-        "pages": [
-          "index",
-          "quickstart",
-          "platform/app-map",
-          "platform/daily-workflow",
-          "getting-started/onboarding",
-          "getting-started/first-forecast"
+        "tab": "Personal",
+        "groups": [
+          {
+            "group": "Start here",
+            "pages": [
+              "index",
+              "getting-started",
+              "plans-and-billing"
+            ]
+          },
+          {
+            "group": "Calendar and transactions",
+            "pages": [
+              "calendar/using-the-calendar",
+              "calendar/transactions",
+              "calendar/recurring-transactions",
+              "calendar/recurring-balances",
+              "calendar/bookmarks"
+            ]
+          },
+          {
+            "group": "Accounts and imports",
+            "pages": [
+              "accounts/manual-accounts",
+              "accounts/plaid-beta",
+              "accounts/categories",
+              "accounts/category-rules",
+              "import/importing-bank-statements",
+              "import/reconcile-statements",
+              "import/detect-recurring"
+            ]
+          },
+          {
+            "group": "Reports and planning",
+            "pages": [
+              "reports/overview",
+              "reports/ai-financial-report",
+              "forecast/how-forecast-works",
+              "debt/debt-payoff-planner"
+            ]
+          },
+          {
+            "group": "Navigator",
+            "pages": [
+              "navigator/overview",
+              "navigator/checkups-and-action-plans",
+              "navigator/voice",
+              "navigator/shared-access"
+            ]
+          },
+          {
+            "group": "Settings and support",
+            "pages": [
+              "settings/profile-and-appearance",
+              "settings/delete-account",
+              "support/contact-support"
+            ]
+          }
         ]
       },
       {
-        "group": "Core app",
-        "pages": [
-          "core-features/calendar",
-          "core-features/transactions",
-          "core-features/recurring",
-          "core-features/accounts-categories",
-          "core-features/bookmarks",
-          "core-features/usage-limits"
+        "tab": "Business",
+        "groups": [
+          {
+            "group": "CalBudget Business",
+            "pages": [
+              "business/overview",
+              "business/saas-spend-calendar",
+              "business/audit-workflow",
+              "business/data-boundaries"
+            ]
+          }
         ]
       },
       {
-        "group": "Planning tools",
-        "pages": [
-          "planning-tools/imports-reconciliation",
-          "planning-tools/reports",
-          "planning-tools/debt",
-          "planning-tools/ai-insights"
-        ]
-      },
-      {
-        "group": "Advisor",
-        "pages": [
-          "advisor/overview",
-          "advisor/chat",
-          "advisor/checkups-actions",
-          "advisor/shared-access"
-        ]
-      },
-      {
-        "group": "Plans and billing",
-        "pages": [
-          "billing/plans",
-          "billing/stripe",
-          "billing/apple-revenuecat"
-        ]
-      },
-      {
-        "group": "Account",
-        "pages": [
-          "account/auth-settings",
-          "account/profile-preferences",
-          "account/privacy-deletion"
-        ]
-      },
-      {
-        "group": "Apps and integrations",
-        "pages": [
-          "mobile/ios",
-          "mobile/desktop",
-          "integrations/plaid",
-          "integrations/email",
-          "integrations/live-chat"
-        ]
-      },
-      {
-        "group": "Support",
-        "pages": [
-          "platform/settings-and-support",
-          "support/help-center-tickets",
-          "support/changelog-feedback",
-          "troubleshooting/common-issues",
-          "security/privacy-security"
+        "tab": "Reference",
+        "groups": [
+          {
+            "group": "Reference",
+            "pages": [
+              "reference/glossary",
+              "reference/routes",
+              "reference/troubleshooting",
+              "reference/image-standards",
+              "reference/screenshot-checklist",
+              "reference/admin-overview"
+            ]
+          }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "App",
-          "href": "https://www.calbudget.com/login",
-          "icon": "calendar-days"
-        },
-        {
-          "anchor": "Help center",
-          "href": "https://docs.calbudget.com",
-          "icon": "circle-help"
-        },
-        {
-          "anchor": "Website",
-          "href": "https://www.calbudget.com",
-          "icon": "globe"
-        }
-      ]
-    }
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:support@calbudget.com"
-      },
-      {
-        "label": "Blog",
-        "href": "https://www.calbudget.com/blog"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Open CalBudget",
-      "href": "https://www.calbudget.com/login"
-    }
-  },
-  "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
     ]
-  },
-  "footer": {
-    "socials": {
-      "github": "https://github.com/spazman2c/calbudgetdocs"
-    }
   }
 }

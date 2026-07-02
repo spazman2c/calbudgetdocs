@@ -1,0 +1,60 @@
+---
+title: "BIZ data boundaries"
+description: "Keep CalBudget Business data, billing, integrations, and database access separate from the consumer CalBudget app."
+---
+
+CalBudget Business uses a separate product and data boundary from consumer CalBudget. This protects personal budget data, business workspace data, billing records, integrations, and audit trails from being mixed together.
+
+<Warning>
+  Do not import the consumer database client into BIZ code, and do not import the BIZ database client into consumer code.
+</Warning>
+
+## Product boundary
+
+| Surface | Routes | Purpose |
+| --- | --- | --- |
+| Consumer CalBudget | `/calendar`, `/debt`, `/billing`, `/subscribe`, `/support` | Personal calendar-first cash-flow planning. |
+| CalBudget Business | `/business`, `/biz/*` | Verified business SaaS spend audit and renewal control. |
+
+Consumer docs should use Free, Plus, and Navigator. Business docs should use CalBudget Business and business workspace language.
+
+## Database boundary
+
+| Area | Consumer CalBudget | CalBudget Business |
+| --- | --- | --- |
+| Database env var | `DATABASE_URL` | `BIZ_DATABASE_URL` |
+| Schema | `src/db/schema.ts` | `src/db/biz/schema.ts` |
+| Migrations | `src/db/migrations` | `src/db/biz/migrations` |
+| DB client | `src/db` | `src/db/biz` |
+| Drizzle config | Consumer Drizzle config | `drizzle.biz.config.ts` |
+
+## Data that belongs in Business
+
+Business workspaces, members, verification, SaaS vendors, business accounts, transactions, evidence, opportunities, cancellation workflows, billing records, integrations, reports, and audit events belong in the BIZ database.
+
+They should not be stored in the personal CalBudget database.
+
+## Data that belongs in consumer CalBudget
+
+Personal accounts, personal transactions, categories, recurring series, bookmarks, debt planner data, consumer support tickets, consumer feedback, consumer onboarding events, and consumer billing belong in the consumer database.
+
+They should not depend on the BIZ database.
+
+## API boundary
+
+Future Business APIs should live under `/api/biz/*`. In the current platform, no `/api/biz/*` routes exist.
+
+Consumer APIs should continue to protect user-scoped personal data. Business APIs should protect workspace-scoped business data.
+
+## Customer-facing implications
+
+For customers, this means:
+
+- A consumer CalBudget plan does not activate CalBudget Business.
+- A CalBudget Business workspace does not change a consumer Free, Plus, or Navigator plan.
+- Consumer account deletion is not the same as deleting a business workspace.
+- Business verification, billing, and audit history should stay with the business workspace.
+
+<Note>
+  Shared presentation utilities are fine when they do not cross the data, billing, auth, or entitlement boundary.
+</Note>

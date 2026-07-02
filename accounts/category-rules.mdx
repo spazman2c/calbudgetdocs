@@ -1,0 +1,57 @@
+---
+title: "Category rules"
+description: "Automatically categorize imported statement rows by matching transaction titles."
+---
+
+# Category rules
+
+Category rules help CalBudget categorize statement rows during imports and reconciliation. They look at the transaction title, then assign an income or expense category when the rule matches.
+
+## How rules work
+
+Rules run during statement imports and reconciliation. If the file already provides a category, that category wins. If the file does not provide a category, CalBudget checks enabled rules and applies the highest-priority match.
+
+If more than one rule matches, CalBudget chooses:
+
+1. The rule with the highest priority.
+2. If priorities are tied, the rule with the more specific match text.
+
+## Match types
+
+You can choose how the rule compares against a transaction title:
+
+- **Contains**: the title includes the rule text.
+- **Starts with**: the title begins with the rule text.
+- **Ends with**: the title ends with the rule text.
+- **Exactly matches**: the whole title matches the rule text.
+
+For example, a rule where the title **contains** `Netflix` can send imported Netflix rows to a **Subscriptions** category.
+
+## Create a rule
+
+1. Open **Category Setup**.
+2. Choose **Rules**.
+3. Select **Add Categorization Rule**.
+4. Choose the title match type.
+5. Enter the rule text.
+6. Choose whether the rule applies to **Expense** or **Income** rows.
+7. Choose the category.
+8. Optionally choose a single account, or leave it set to **Any account**.
+9. Set the priority.
+10. Save the rule.
+
+## Account-specific rules
+
+Use the account field when the same title should be categorized differently depending on the account. For example, a transfer title may appear in both checking and savings, but you may only want one account's version assigned to a particular category.
+
+Leave the account set to **Any account** when the rule should work everywhere.
+
+## Enable, disable, edit, or delete rules
+
+Rules can be disabled without deleting them. This is useful when you want to pause a rule and keep its setup for later.
+
+You can also edit a rule's match text, category, transaction type, account scope, and priority. Deleting a rule stops future matches, but it does not change transactions that were already categorized.
+
+## Match count
+
+Each rule shows how many times it has matched. Use match count to see which rules are doing useful work and which ones may be too narrow, too broad, or no longer needed.
