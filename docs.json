@@ -4,8 +4,8 @@
   "name": "CalBudget Docs",
   "description": "Customer documentation for CalBudget, the calendar-first budget and cash-flow planning app.",
   "logo": {
-    "light": "/images/calbudget/calbudget-logo.png",
-    "dark": "/images/calbudget/calbudget-logo.png"
+    "light": "/images/calbudget/calbudget-logo-light.png",
+    "dark": "/images/calbudget/calbudget-logo-dark.png"
   },
   "favicon": "/images/calbudget/calbudget-icon.png",
   "colors": {
@@ -71,7 +71,8 @@
             "pages": [
               "settings/profile-and-appearance",
               "settings/delete-account",
-              "support/contact-support"
+              "support/contact-support",
+              "support/troubleshooting"
             ]
           }
         ]
@@ -85,23 +86,7 @@
               "business/overview",
               "business/saas-spend-calendar",
               "business/audit-workflow",
-              "business/data-boundaries"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Reference",
-        "groups": [
-          {
-            "group": "Reference",
-            "pages": [
-              "reference/glossary",
-              "reference/routes",
-              "reference/troubleshooting",
-              "reference/image-standards",
-              "reference/screenshot-checklist",
-              "reference/admin-overview"
+              "business/data-and-privacy"
             ]
           }
         ]
