@@ -10,6 +10,18 @@ The debt payoff planner helps you collect debt details, compare payoff strategie
   <img src="/images/calbudget/debt-payoff-planner.jpg" alt="CalBudget debt payoff planner with debt totals, income sources, and payoff strategy controls" />
 </Frame>
 
+<CardGroup cols={3}>
+  <Card title="Track debts">
+    Store balances, APR, minimum payment, due day, debt type, and notes.
+  </Card>
+  <Card title="Compare strategies">
+    Review avalanche and snowball payoff orders before choosing a plan.
+  </Card>
+  <Card title="Export payments">
+    Add the generated schedule to a dedicated Debt Payoff Plan calendar account.
+  </Card>
+</CardGroup>
+
 ## Open the planner
 
 Open Debt from the app navigation. The planner scans your CalBudget data and shows debt suggestions, tracked debts, income estimates, and payoff plan controls.
@@ -47,8 +59,14 @@ You can also set an extra monthly budget. If you do not set one, CalBudget can e
 
 CalBudget supports two payoff strategies:
 
-- Avalanche focuses extra payments on higher-interest debts first.
-- Snowball focuses extra payments on smaller balances first.
+<CardGroup cols={2}>
+  <Card title="Avalanche">
+    Focuses extra payments on higher-interest debts first.
+  </Card>
+  <Card title="Snowball">
+    Focuses extra payments on smaller balances first.
+  </Card>
+</CardGroup>
 
 The generated plan shows the selected strategy and compares it with the alternate strategy so you can see differences in months and estimated interest.
 
@@ -84,3 +102,7 @@ Refresh the plan when:
 - A lender changes APR or terms
 
 The debt payoff planner is informational planning help. It is not financial, legal, tax, or investment advice.
+
+<Warning>
+  Confirm payoff amounts, interest, fees, and payment rules with each lender before acting on a generated schedule.
+</Warning>

@@ -9,6 +9,18 @@ The calendar is the main planning surface in CalBudget. It shows what is schedul
   <img src="/images/calbudget/calendar-month.jpg" alt="CalBudget calendar with scheduled transactions and running balances" />
 </Frame>
 
+<CardGroup cols={3}>
+  <Card title="Daily balance">
+    The projected account balance after that day's income and expenses are applied.
+  </Card>
+  <Card title="Scheduled items">
+    Planned and recurring transactions that explain why the daily balance changes.
+  </Card>
+  <Card title="Low-point review">
+    The fastest way to spot dates that need attention before the month gets tight.
+  </Card>
+</CardGroup>
+
 ## Choose an account
 
 Use the account selector to switch between accounts. Each account has its own transactions, running balance, and forecast.
@@ -32,6 +44,10 @@ Income increases the balance. Expenses and uncategorized transactions decrease i
 - An expense entered as income, or income entered as an expense.
 - An outdated account balance.
 - A duplicate transaction.
+
+<Warning>
+  If a projected balance looks impossible, check transaction type first. Income should increase the balance, and expenses should lower it.
+</Warning>
 
 ## Open a day
 
@@ -63,6 +79,10 @@ If you move, create, delete, or toggle a cleared state by mistake, use undo to s
 Use search when you need to find a specific transaction by title. Selecting a search result can take you to the month where that transaction lives and open it for review.
 
 Use category filters when you want to focus on a slice of the calendar, such as income, bills, subscriptions, or flexible spending.
+
+<Tip>
+  Search is especially helpful for recurring bills. Find the bill, open the occurrence, and confirm whether the date, amount, or recurring schedule needs to change.
+</Tip>
 
 ## Keep the calendar useful
 

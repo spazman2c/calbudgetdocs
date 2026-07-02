@@ -5,6 +5,18 @@ description: Create one-time income and expenses, update details, and mark items
 
 Transactions are the dated items that drive your CalBudget forecast. Add income when money comes in, add expenses when money goes out, and place each item on the date it affects the account.
 
+<CardGroup cols={3}>
+  <Card title="Income">
+    Paychecks, transfers, deposits, benefits, reimbursements, or any money that raises the account balance.
+  </Card>
+  <Card title="Expenses">
+    Bills, subscriptions, debt payments, groceries, gas, planned purchases, or any money that lowers the account balance.
+  </Card>
+  <Card title="Cleared status">
+    A way to separate confirmed activity from items that are still only planned.
+  </Card>
+</CardGroup>
+
 ## Add a transaction
 
 To add a transaction:
@@ -29,6 +41,10 @@ You can type a sign with the amount:
 - `-45` suggests expense.
 
 You can also choose Expense or Income directly. The transaction type matters because income raises the balance and expenses lower it.
+
+<Tip>
+  Use signs when entering quickly, then still confirm the final transaction type before saving.
+</Tip>
 
 ## Choose an account
 
@@ -60,6 +76,10 @@ Examples:
 - `verizon.com`
 - `studentloanprovider.com`
 
+<Note>
+  Website URLs are optional. They are most useful for recurring bills, subscriptions, lenders, utilities, and vendors you revisit often.
+</Note>
+
 ## Mark a transaction cleared
 
 Turn on **Cleared** when the transaction has happened or posted.
@@ -81,3 +101,12 @@ Delete a transaction when it should no longer affect the plan. If the transactio
 Use the transaction detail view when you want to review a transaction without immediately editing it.
 
 From details, you can confirm the amount, date, category, cleared state, and any extra context attached to the transaction.
+
+<CardGroup cols={2}>
+  <Card title="Make it recurring" href="/calendar/recurring-transactions">
+    Use recurring schedules for bills, paychecks, subscriptions, and transfers that happen again.
+  </Card>
+  <Card title="Save a bookmark" href="/calendar/bookmarks">
+    Use bookmarks for quick-add transactions that do not need a repeating schedule.
+  </Card>
+</CardGroup>

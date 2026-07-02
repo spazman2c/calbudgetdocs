@@ -90,6 +90,17 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "Updates",
+        "groups": [
+          {
+            "group": "Release notes",
+            "pages": [
+              "updates/2-1"
+            ]
+          }
+        ]
       }
     ]
   }
