@@ -1,0 +1,117 @@
+---
+title: "Internal Admin Docs Overview"
+description: "Draft reference for documenting CalBudget's hidden admin surface without exposing it in customer docs."
+---
+
+<Warning>
+  This page is for internal documentation only. Do not link hidden admin routes or admin screenshots from public customer docs.
+</Warning>
+
+## Admin surface
+
+The internal admin area lives under:
+
+```txt
+/quantum-nebula-9x
+```
+
+Access is guarded by admin authorization. Admin APIs use `requireAdmin()` and live under `/api/admin/*`.
+
+Public docs may mention that support and billing are managed by CalBudget staff, but should not expose the hidden admin route path, admin screenshots, or operational implementation details.
+
+## Admin route map
+
+| Route | Purpose | Public docs exposure |
+| --- | --- | --- |
+| `/quantum-nebula-9x` | Operational dashboard with users, revenue estimates, product events, tickets, feedback, email, and webhook health. | Do not expose. |
+| `/quantum-nebula-9x/users` | User search, create/edit/delete, role toggles, subscription/free-access edits, reset tools. | Do not expose. |
+| `/quantum-nebula-9x/invoices` | Stripe invoice browser and MRR estimates. | Do not expose. |
+| `/quantum-nebula-9x/emails` | Email events, newsletter tools, templates, recent sends. | Do not expose. |
+| `/quantum-nebula-9x/blog` | DB-backed blog CRUD and publishing. | Do not expose. |
+| `/quantum-nebula-9x/support` | Support ticket queue and admin replies. | Do not expose. |
+| `/quantum-nebula-9x/feedback` | Feedback campaigns and reward grants. | Do not expose. |
+| `/quantum-nebula-9x/changelog` | DB-backed changelog CRUD. | Do not expose. |
+| `/quantum-nebula-9x/audit-log` | Admin action audit log. | Do not expose. |
+| `/quantum-nebula-9x/documentation` | Internal documentation surface. | Do not expose. |
+
+## Admin API map
+
+| API | Methods | Notes |
+| --- | ---: | --- |
+| `/api/admin/stats` | GET | Aggregates dashboard stats. |
+| `/api/admin/users` | GET, POST | Lists safe user columns plus usage counts; creates users. |
+| `/api/admin/users/[id]` | GET, PATCH, DELETE | Loads user and Stripe details; edits profile/admin/subscription/free access; prevents self-delete. |
+| `/api/admin/users/[id]/actions` | POST | User tools such as onboarding override, product reset, AI report reset, preference reset, Stripe sync, and trial email actions. |
+| `/api/admin/users/[id]/impersonate` | POST | Starts admin impersonation for support/debug flows. |
+| `/api/admin/users/reconcile-stripe` | POST | Reconciles users with Stripe billing state. |
+| `/api/admin/invoices` | GET | Pulls live Stripe invoices and active/trialing MRR estimates. |
+| `/api/admin/support` | GET | Lists support tickets joined to user names. |
+| `/api/admin/support/[id]` | PATCH, DELETE | Updates status, notes, admin reply; deletes tickets. |
+| `/api/admin/feedback` | GET, POST, PATCH | Feedback campaigns and reward grants. |
+| `/api/admin/blog` | GET, POST | Blog list/create. |
+| `/api/admin/blog/[id]` | PATCH, DELETE | Blog update/delete. |
+| `/api/admin/changelog` | GET, POST | Changelog list/create. |
+| `/api/admin/changelog/[id]` | PATCH, DELETE | Changelog update/delete. |
+| `/api/admin/emails` | GET, POST | Email event list; post path delegates newsletter send behavior. |
+| `/api/admin/emails/newsletter` | POST | Sends newsletter. |
+| `/api/admin/newsletter` | GET, POST | Lists sends; sends dry-run or confirmed newsletters. |
+| `/api/admin/email-log` | GET | Older/narrower email log endpoint. |
+| `/api/admin/audit-log` | GET | Reads admin audit logs. |
+| `/api/admin/help` | GET, POST | Internal help/docs management surface. |
+
+## Admin audit expectations
+
+`src/lib/admin-audit.ts` records best-effort audit rows. Failures are logged but do not block the admin action.
+
+Audited action families include:
+
+1. User create, update, delete.
+2. User reset tools.
+3. Billing reconciliation and selected subscription actions.
+4. Feedback campaign create/update.
+5. Feedback reward grants.
+6. Newsletter sends.
+7. Admin impersonation start/stop.
+
+Known audit-log caveat: blog, changelog, and support mutations may not all record admin audit logs. Verify before writing compliance-facing docs.
+
+## Impersonation documentation notes
+
+Admin impersonation exists to help debug user-reported issues. Internal docs should explain:
+
+1. Who is allowed to impersonate.
+2. Which actions are appropriate during impersonation.
+3. How to stop impersonation.
+4. What audit events are written.
+5. What support notes should be recorded after use.
+
+Customer-facing docs should not encourage users to request impersonation as a normal support step.
+
+## Admin screenshots
+
+Admin screenshots are internal-only by default.
+
+Before adding an admin screenshot to internal docs:
+
+1. Use a seeded or local admin account where possible.
+2. Redact user emails, names, support ticket text, invoices, revenue details, and identifiers.
+3. Do not include production customer rows unless there is an explicit internal need.
+4. Add a caption that says "Internal admin screenshot" or "Seeded admin screenshot."
+5. Confirm the page is not included in public Mintlify navigation.
+
+<Warning>
+  Never use hidden admin screenshots in customer-facing docs. Never use fake/template screenshots to explain admin operations unless they are visibly labeled as placeholders.
+</Warning>
+
+## Public/private split
+
+Use this split when turning internal admin content into published docs:
+
+| Topic | Public docs | Internal docs |
+| --- | --- | --- |
+| Support tickets | How users contact support and see replies. | Admin queue, status handling, reply workflow. |
+| Billing help | How users manage subscriptions or contact support. | Stripe invoice lookup, subscription state edits, reconciliation. |
+| Changelog | Public release notes. | DB-backed changelog CRUD and publishing workflow. |
+| Blog | Public articles. | Admin editor workflow and publishing caveats. |
+| Feedback | User-facing prompts and rewards if relevant. | Campaign setup, activation, reward grant handling. |
+| Admin audit | Usually omit. | What is audited, gaps, and review process. |

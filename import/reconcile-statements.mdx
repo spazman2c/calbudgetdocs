@@ -1,0 +1,56 @@
+---
+title: "Reconcile statements"
+description: "Match real bank activity to planned calendar transactions, create missing cleared transactions, and ignore rows you do not need."
+---
+
+# Reconcile statements
+
+Reconciliation compares a bank statement against the planned transactions in one CalBudget account. It helps you mark planned items as cleared, create transactions that were missing from the calendar, and ignore rows that should not affect your plan.
+
+## When to reconcile
+
+Use reconciliation when you already planned bills, paychecks, or spending on the calendar and want to compare that plan against posted bank activity.
+
+Reconciliation is especially useful for:
+
+- Marking planned transactions as cleared
+- Finding purchases you forgot to add
+- Keeping imported history from duplicating planned items
+- Cleaning up a month after the bank activity posts
+
+## Choose a single account
+
+Before reconciling, choose the account that matches the statement file. CalBudget needs one account so it can compare the imported rows against the correct planned calendar.
+
+If you are viewing all accounts, switch to the specific account first.
+
+## Review match suggestions
+
+CalBudget suggests matches when the imported row and a planned transaction line up by date, amount, and title. Suggested matches show a confidence percentage and reason.
+
+For each row, choose one decision:
+
+- **Match**: use the suggested planned transaction.
+- **Create**: add a new cleared transaction from the statement row.
+- **Ignore**: skip the statement row.
+
+Rows without a suggested match can still be created or ignored.
+
+## What happens when you commit
+
+When you select **Reconcile Rows**, CalBudget saves your decisions:
+
+- Matched transactions are marked cleared.
+- Matched transactions receive the statement fingerprint so CalBudget knows they were reviewed.
+- Created rows become new cleared transactions.
+- Ignored rows are recorded as ignored in the reconciliation session.
+
+Created transactions count toward your transaction usage. Matched and ignored rows do not create new transactions.
+
+## Categories during reconciliation
+
+If the statement row includes a category, CalBudget uses that category. If it does not, enabled category rules can assign one automatically. If a needed category does not exist yet, CalBudget can create it during commit.
+
+## Canceling a reconciliation
+
+You can cancel before committing if the file is wrong or the decisions need more review. Once committed, the matched and created transactions are saved to the calendar.

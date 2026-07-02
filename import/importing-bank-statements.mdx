@@ -1,0 +1,50 @@
+---
+title: "Import bank statements"
+description: "Upload CSV, OFX, QFX, or TXT statement files to reconcile activity or detect recurring schedules."
+---
+
+# Import bank statements
+
+CalBudget can read bank statement exports so you can compare real activity against your calendar or turn repeated history into recurring schedules.
+
+## Supported files
+
+CalBudget accepts:
+
+- CSV files
+- OFX files
+- QFX files
+- TXT files that contain statement-style CSV or OFX content
+
+For CSV files, CalBudget looks for common columns such as date, description, amount, debit, credit, deposit, withdrawal, type, or transaction type.
+
+## Choose an import mode
+
+The import screen has two modes:
+
+- **Reconcile** compares imported activity against planned calendar transactions.
+- **Recurring** scans statement history for repeated bills and income schedules.
+
+Use **Reconcile** when you want to clean up what already happened. Use **Recurring** when you want CalBudget to find predictable future items from past history.
+
+## Import a statement
+
+1. Open **Import statement**.
+2. Choose **Reconcile** or **Recurring**.
+3. Drop the file into the upload area, or select the upload area and choose a file.
+4. Wait while CalBudget analyzes the statement.
+5. Review the results before anything is saved.
+
+## What CalBudget reads from the file
+
+CalBudget reads transaction dates, descriptions, and amounts. It treats positive amounts as income and negative amounts as expenses. For common debit and credit column formats, CalBudget converts debits into expenses and credits into income.
+
+Some credit card files export charges as positive numbers. CalBudget detects common credit card statement formats and flips those signs so charges become expenses and payments become income or credits.
+
+## If the file cannot be read
+
+If CalBudget cannot find any transactions, export a fresh file from your bank and check that it includes dates, descriptions, and amounts. CSV, OFX, and QFX exports work best when they come directly from your bank or credit card website.
+
+## Before you save
+
+Always review the import results. Statement files can contain transfers, refunds, bank-specific naming, or unusual sign conventions. The review step is where you confirm what should be matched, created, ignored, or turned into a recurring schedule.

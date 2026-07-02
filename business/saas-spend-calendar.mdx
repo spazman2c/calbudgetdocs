@@ -1,0 +1,70 @@
+---
+title: "BIZ SaaS spend calendar"
+description: "Review the CalBudget Business SaaS spend calendar, event statuses, monthly totals, and transaction detail overlay."
+---
+
+The BIZ SaaS spend calendar turns business software charges, renewals, trials, and review work into a month-by-month operating view.
+
+<Frame caption="CalBudget Business SaaS spend calendar">
+  <img src="/images/calbudget/biz-calendar.jpg" alt="CalBudget Business SaaS spend calendar" />
+</Frame>
+
+<Note>
+  The current `/biz/calendar` route is an admin-gated demo/platform surface. Treat it as the current BIZ calendar experience, not a self-serve public customer route.
+</Note>
+
+## Routes
+
+| Route | Current purpose |
+| --- | --- |
+| `/business` | Public CalBudget Business marketing page. |
+| `/biz` | Redirects to the current BIZ calendar month. |
+| `/biz/calendar` | Admin-gated BIZ calendar demo/platform route. |
+
+## What the calendar shows
+
+The calendar groups BIZ events by date and month. The header summarizes:
+
+- Monthly SaaS spend
+- Potential savings
+- Review count
+- Renewal count
+
+Each day can show vendor events such as renewals, trial conversions, review items, and other SaaS spend events.
+
+## Event types and statuses
+
+Calendar events can represent different kinds of work:
+
+| Event signal | Meaning |
+| --- | --- |
+| Renewal | A subscription or vendor relationship is coming up for renewal. |
+| Trial conversion | A trial may convert into paid spend. |
+| Review | A vendor or charge needs a human decision. |
+| Needs review | The event has enough signal to inspect but is not resolved. |
+| Assigned | An owner has been assigned to follow up. |
+
+Event styling should help teams spot urgency, but the decision still depends on the evidence attached to the event.
+
+## Transaction detail overlay
+
+Opening a calendar event shows a full-screen detail overlay with the event, vendor, account, transaction, and opportunity context available for that item.
+
+Useful details include:
+
+- Vendor name, category, logo, and website
+- Amount, cadence, and confidence
+- Source transaction and account
+- Recurrence key or external reference when available
+- Related savings opportunity
+- Evidence and status
+
+## How teams should use it
+
+Use the calendar as a review queue, not just a spend report:
+
+1. Start with renewals and trial conversions this month.
+2. Open events marked needs review or assigned.
+3. Check the evidence and confidence.
+4. Assign an owner or due date when a human decision is needed.
+5. Move approved savings actions into the audit workflow.

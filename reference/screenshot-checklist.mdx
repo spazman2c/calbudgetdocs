@@ -1,0 +1,135 @@
+---
+title: "Screenshot Capture Checklist"
+description: "Step-by-step checklist for capturing truthful CalBudget screenshots for Mintlify docs."
+---
+
+<Warning>
+  Capture real UI from production, a seeded sandbox account, or a local build that matches production. Do not use fake dashboards, template images, or generated mockups as screenshots.
+</Warning>
+
+## Capture principles
+
+Screenshots should be:
+
+1. Current: matching the UI users see now.
+2. Truthful: captured from real app states, not static mockups.
+3. Useful: focused on the task the doc explains.
+4. Private: free of customer data, secrets, tokens, full payment details, or internal-only information.
+5. Labeled: clearly marked if they are sandbox or illustrative.
+
+## Recommended capture set
+
+Prioritize these missing screenshots for the Mintlify refresh:
+
+| Area | Capture |
+| --- | --- |
+| Calendar | Month view with forecast sidebar and warning strip. |
+| Transactions | Add transaction panel, edit transaction panel, transaction detail modal, and day transaction list. |
+| Recurring | Recurring transaction setup, starting balance fields, and recurring scope modal. |
+| Recurring balances | Paydown and growth tracker examples. |
+| Reports | Reports dashboard, category spending, category trends, and AI Financial Report. |
+| Import | Statement upload, reconciliation decisions, and commit summary. |
+| Plaid beta | Settings panel, connected institution, sync result, and recurring suggestions. |
+| Bookmarks | Bookmarks modal and quick-add bookmark strip. |
+| Category rules | Rules tab and add-rule form. |
+| Debt | Debt suggestions, avalanche/snowball comparison, export-to-calendar flow. |
+| Navigator | Chat, checkups, action list, voice settings, and voice dock. |
+| Shared access | Invite list and invite acceptance page. |
+| Support | Ticket list, reply banner, and Woes chat launch from Help. |
+| Mobile | Mobile calendar and BIZ calendar responsive states. |
+| Business | BIZ calendar, transaction detail overlay, vendor status examples. |
+
+Already captured:
+
+| File | Notes |
+| --- | --- |
+| `artifacts/docs-screenshots/business-hero.jpg` | Real business page capture. |
+| `artifacts/docs-screenshots/biz-calendar.jpg` | Real BIZ calendar capture. |
+| `artifacts/docs-screenshots/pricing-subscribe.jpg` | Real pricing/subscribe capture. |
+
+## Setup checklist
+
+Before capture:
+
+1. Use a seeded account or sandbox workspace.
+2. Set realistic but non-sensitive names and transaction descriptions.
+3. Include a mix of income, bills, subscriptions, and ordinary expenses.
+4. Confirm the account has the correct plan or feature gate for the target screen.
+5. Confirm whether the screen belongs to consumer CalBudget or CalBudget Business.
+6. Hide browser bookmarks and extension clutter.
+7. Use consistent viewport sizes across a capture batch.
+
+Suggested desktop viewports:
+
+| Use | Size |
+| --- | --- |
+| Main desktop docs screenshots | `1440x1000` |
+| Compact desktop checks | `1280x900` |
+| Mobile docs screenshots | `390x844` |
+| Small mobile checks | `360x740` |
+
+## Privacy checklist
+
+Before saving:
+
+1. Redact email addresses, names, private notes, exact account numbers, support messages, invoice details, and payment identifiers.
+2. Do not show live Stripe customer IDs, subscription IDs, Apple transaction IDs, RevenueCat IDs, Plaid item IDs, or API tokens.
+3. Do not show real customer support tickets.
+4. Do not show production admin metrics unless the screenshot is internal-only.
+5. Do not show personal financial distress examples tied to a real person.
+
+If redaction removes the key lesson, recreate the state with seeded data instead.
+
+## Capture checklist
+
+For each screenshot:
+
+1. Navigate to the exact screen.
+2. Trigger the state the doc explains, such as an open modal or filtered report.
+3. Remove unrelated overlays, browser tooltips, dev banners, and loading spinners.
+4. Confirm visible dates and amounts make sense together.
+5. Capture at the agreed viewport.
+6. Save with a descriptive lowercase filename, for example `calendar-month-forecast-sidebar.png`.
+7. Record the source route, viewport, account type, and whether the data is seeded.
+8. Add alt text and a caption while the context is fresh.
+
+## Filename conventions
+
+Use stable, descriptive names:
+
+| Pattern | Example |
+| --- | --- |
+| `{surface}-{feature}-{state}.png` | `consumer-calendar-add-transaction.png` |
+| `{surface}-{feature}-{viewport}.png` | `biz-calendar-mobile.png` |
+| `{feature}-{task}-{state}.png` | `import-reconciliation-match-create-ignore.png` |
+
+Avoid names like `screenshot-1.png`, `final-final.png`, or `mock-dashboard.png`.
+
+## Caption checklist
+
+Every screenshot should answer:
+
+1. What is visible?
+2. Why does it matter?
+3. Is it a real screenshot, sandbox screenshot, or illustration?
+
+Example:
+
+> Sandbox screenshot of the CalBudget calendar showing a paycheck, rent, and subscription payments rolling into the daily balance forecast.
+
+## Publication warnings
+
+Add visible labels when needed:
+
+| Image type | Required label |
+| --- | --- |
+| Real production screenshot | No special label if private data is redacted. |
+| Seeded sandbox screenshot | "Sandbox screenshot." |
+| Local development screenshot | "Local development screenshot." Use only if it matches production behavior. |
+| Illustration | "Illustration, not a product screenshot." |
+| Placeholder | "Placeholder. Replace with a real CalBudget screenshot before release." |
+| Template/mock asset | Do not publish as product docs. |
+
+<Warning>
+  Never rename or caption a mock/template asset so it appears to be a real CalBudget screenshot. This is especially important for dashboard mockups, landing-page demo views, placeholder logos, and imported marketing template imagery.
+</Warning>

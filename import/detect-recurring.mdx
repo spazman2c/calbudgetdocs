@@ -1,0 +1,62 @@
+---
+title: "Detect recurring schedules from statements"
+description: "Scan statement history for repeated bills and income, then create only the recurring schedules you approve."
+---
+
+# Detect recurring schedules from statements
+
+Recurring detection scans statement history for repeated bills and income. Instead of importing every past row as a calendar transaction, this mode helps you create future recurring schedules from patterns CalBudget finds.
+
+## When to use recurring detection
+
+Use this mode when you want CalBudget to find predictable items such as:
+
+- Paychecks
+- Rent or mortgage payments
+- Subscriptions
+- Utilities
+- Insurance premiums
+- Loan or credit card payments
+
+For best results, upload a statement file with at least 2-3 months of history. A shorter file may not contain enough repeats for CalBudget to identify a pattern.
+
+## What CalBudget detects
+
+CalBudget looks for repeated transaction names, amounts, and timing. It can suggest frequencies such as:
+
+- Daily
+- Weekly
+- Bi-weekly
+- Twice monthly
+- Monthly
+- Yearly
+
+Each suggestion includes a confidence level, number of occurrences, next expected date, amount, income or expense type, and a suggested merchant URL when CalBudget can infer one.
+
+## Review before saving
+
+Nothing is saved until you approve it. In the review screen, you can:
+
+- Include or exclude each suggestion
+- Rename the item
+- Change income vs expense
+- Change the frequency
+- Choose a category
+- Change the start date
+- Add or edit the merchant URL
+
+Low-confidence suggestions are not selected by default. Review them carefully before including them.
+
+## Create recurring schedules
+
+After review, select **Import Recurring**. CalBudget creates the selected recurring schedules and places future occurrences on your calendar.
+
+This mode creates recurring schedules, not one transaction for every row in the statement file. If you want to add posted historical rows, use reconciliation instead.
+
+## If no patterns are found
+
+If CalBudget reads the transactions but finds no recurring patterns, try a file with a longer date range or more repeated activity. Some statements contain too little history, irregular amounts, or transaction names that change too much for reliable detection.
+
+## Keep the forecast honest
+
+Recurring detection is a fast starting point, but your forecast is only as good as the schedules you keep. Remove suggestions that are one-off purchases, adjust dates that do not match real due dates, and confirm income amounts before relying on the forecast.

@@ -1,0 +1,81 @@
+---
+title: "BIZ audit workflow"
+description: "Run a CalBudget Business SaaS spend audit from vendor normalization through approved savings actions and reports."
+---
+
+The CalBudget Business audit workflow turns messy company spend into evidence-backed opportunities. The goal is not to guess which tools to cancel; the goal is to help a verified business make safer decisions with a clear record.
+
+## Audit loop
+
+<Steps>
+  <Step title="Normalize vendors">
+    Convert transaction descriptors, card labels, and upload rows into recognizable SaaS vendors with category, cadence, and confidence.
+  </Step>
+  <Step title="Detect recurring SaaS">
+    Identify repeat charges, renewals, trials, price changes, and ownerless tools.
+  </Step>
+  <Step title="Find savings opportunities">
+    Group duplicate tools, unused or forgotten trials, renewal risks, downgrade candidates, and consolidation options.
+  </Step>
+  <Step title="Attach evidence">
+    Keep the transaction, account, cadence, amount, vendor, confidence, and supporting notes with the recommendation.
+  </Step>
+  <Step title="Assign an owner">
+    Give each opportunity a person, due date, and next action.
+  </Step>
+  <Step title="Approve the action">
+    Require human approval before canceling, downgrading, consolidating, negotiating, or monitoring.
+  </Step>
+  <Step title="Confirm the outcome">
+    Mark the result only after the business confirms what happened.
+  </Step>
+  <Step title="Report savings">
+    Separate potential savings from confirmed savings in monthly reporting.
+  </Step>
+</Steps>
+
+## Opportunity types
+
+Common opportunity types include:
+
+- Duplicate tools
+- Forgotten trials
+- Upcoming renewals
+- Price increases
+- Downgrade candidates
+- Consolidation candidates
+- Negotiation candidates
+- Owner review
+- Monitor only
+
+## Evidence rules
+
+Every recommendation should have evidence and confidence. Evidence may include the original transaction, vendor normalization, recurrence pattern, renewal date, amount, account source, and related notes.
+
+<Warning>
+  Never mark a subscription canceled from inference alone. A cancellation, downgrade, or card action must require explicit human confirmation.
+</Warning>
+
+## Approval and audit trail
+
+Sensitive actions should write audit events. The audit trail should preserve:
+
+- Who approved the action
+- What action was approved
+- Which vendor and workspace were involved
+- What evidence supported the decision
+- When the status changed
+- Whether the outcome is potential, approved, in progress, or confirmed
+
+## Reporting
+
+Reports should distinguish:
+
+- Monthly SaaS spend
+- Potential savings surfaced
+- Approved savings work
+- Confirmed savings
+- Renewals pulled forward for review
+- Open items that still need an owner or decision
+
+This keeps CalBudget Business useful for founders, operators, bookkeepers, and fractional CFOs who need to prove the value of the audit.
